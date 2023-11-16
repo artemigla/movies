@@ -10,7 +10,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: #002f32;
-  
+    
+    .debaunce {
+      display: none;
+    }
     .title {
       margin-left: 10px;
       font-size: 25px;
@@ -60,8 +63,13 @@
   
   @media (max-width: 768px) {
     .container {
-      .search {
+      .clicksearch {
         display:  none;
+      }
+      .search input{
+        border-radius: 0 0 0 0;
+        width: 150px;
+        height: 25px;
       }
       .title {
         margin-left: 10px;
