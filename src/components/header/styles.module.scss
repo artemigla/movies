@@ -3,17 +3,14 @@
     padding: 0;
     text-decoration: none;
   }
-  .container {
-    display: flex;
-    width: 100%;
-    height: 70px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #002f32;
+.container {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002f32;
     
-    .debaunce {
-      display: none;
-    }
     .title {
       margin-left: 10px;
       font-size: 25px;
@@ -24,7 +21,7 @@
       display: flex;
       position: relative;
       height: 30px;
-    
+      
       .clicksearch {
         position: relative;
         width: 100px;
@@ -62,33 +59,68 @@
   }
   
   @media (max-width: 768px) {
-    .container {
+  .container {
+    .search {
+      width: 50%; 
+      font-size: 100%;
+
       .clicksearch {
-        display:  none;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+          
+        .icon{
+          margin-right: auto;
+          margin-left: auto;
+        }
       }
-      .search input{
-        border-radius: 0 0 0 0;
-        width: 150px;
-        height: 25px;
-      }
-      .title {
-        margin-left: 10px;
-        color: white;
-        font-size: 17px;
-      }
-      .avatar{
-        width: 35px;
-        height: 35px;
-      }
+
+        input {
+          outline: none;
+          border-radius: 15px 0 0 15px;
+          width: 100%;
+          border: none;
+          margin-left: -12px;
+        }
+    } 
+
+    .title {
+      margin-left: 10px;
+      color: white;
+      font-size: 17px;
+    }
+    
+    .avatar{
+      width: 35px;
+      height: 35px;
     }
   }
+}
   
-  @media (max-width: 320px) {
-    .container{
+@media (min-width: 320px) {
+  .container{
+    .search{
+      position: relative;
+        
+        .clicksearch{
+          position: relative;
+          display: flex; 
+            
+          .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      
       .avatar{
         width: 30px;
-        height: 30px;
+        height: 30px;      
       }
+
       .title {
         margin-left: 10px;
         font-size: 12px;
