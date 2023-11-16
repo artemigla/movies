@@ -12,14 +12,16 @@
       width: 97%;
       margin: 0 auto;
       grid-gap: 1em;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 5fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
+      overflow-x: hidden;
+      overflow-y: hidden;
     }
       
     .cards{
       display: flex;
       flex-direction: column; 
       position: relative;
-        
+       
         .link {
           display: flex;
           position: relative;
@@ -32,9 +34,10 @@
             width: 250px;
             height: 350px;
             cursor: pointer;
+            object-fit: contain; 
             margin-left: 1.4em;
           }
-          
+            
           .average{
             position: relative;
             top: 19em;
@@ -60,28 +63,30 @@
       
       .wrapper{
        display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
+       grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+        overflow-x: hidden;
+        overflow-y: hidden;
         .cards{
           margin: 10px;
           position: relative;
           margin: 0 auto;
           width: 180px;
-           .link {
+           
+            .link {
               display: flex;
               position: relative;
               font-size: 25px;
               margin-right: auto; 
   
              .img{
-              display: flex;
-              border-radius: 12px;
-              margin: 0 auto;
-              background-size: cover;
-              width: 150px;
-              height: 250px;
-              cursor: pointer;
-              margin-left: 1.2em;
+                display: flex;
+                border-radius: 12px;
+                margin: 0 auto;
+                background-size: cover;
+                width: 150px;
+                height: 250px;
+                cursor: pointer;
+                margin-left: 1.2em;
               }
   
               .average{
@@ -92,6 +97,7 @@
                 font-size: 30px;
               }
             }
+           
             .title{
               position: relative;
               color: white;
@@ -108,13 +114,14 @@
    .container { 
       position: relative;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 2fr));
-     
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      overflow-x: hidden; 
+      
       .wrapper{ 
         .cards{
           margin: 10px;
           position: relative;
-       
+          
           .link{
             .average{
               position: relative;
