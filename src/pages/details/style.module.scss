@@ -57,8 +57,7 @@
     .reviews{
       display: flex; 
       flex-direction: column;
-      margin-top: 35px;
-  
+      margin-top: 35px; 
       margin-bottom: 15px;
   
       .detailsReviews{
@@ -83,3 +82,51 @@
       }
     }
   }
+
+@media screen and (max-width: 720px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .overviewContent{
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        
+        .imgwrapper{
+          border: 1px solid white;
+          .img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 250px;
+            object-fit: cover;
+            margin-left: auto;
+            margin-right: auto; 
+          }
+
+          .average{
+            left: 7em;
+          }
+        }
+
+        .detail{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 17px;
+          
+          .title{
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}

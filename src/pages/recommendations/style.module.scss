@@ -9,14 +9,9 @@
 }
 
 .img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 10px;
     width: 100px;
     height: 120px;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 10px;
 }
 
@@ -30,3 +25,14 @@
     padding: 10px;
     background-color: #0e1b32;
 }
+
+.noimg{
+    background-image: url('../../assets/no-image-available28.png');
+    background-size: cover;
+    height: 120px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+

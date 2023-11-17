@@ -7,14 +7,8 @@ import style from './style.module.scss';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { SETTINGS } from "../../constants/CONSTANTS";
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 700,
-  slidesToShow: 9,
-  slidesToScroll: 3
-};
 export const Recommendations = () => {
   const { ids } = useParams();
   const dispatch = useDispatch();
@@ -29,10 +23,10 @@ export const Recommendations = () => {
       {selector.length ? <div className={style.titleRecommendation}>
         <h2>Recommendation</h2>
       </div> : null}
-      <Slider {...settings} className={style.slider} >
+      <Slider {...SETTINGS} className={style.slider} >
         {selector.map((item) => (
           <div className={style.wrapper} key={item.id}>
-            <img className={style.img} src={`${BASE_URL_IMAGES}${item.poster_path}`} alt="" />
+            <img className={style.img ? style.noimg : style.img} src={`${BASE_URL_IMAGES}${item.poster_path}`} alt="" />
             <p className={style.title}>{item.title}</p>
           </div>
         ))}

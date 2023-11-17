@@ -5,14 +5,14 @@ import style from './style.module.scss';
 import dayjs from "dayjs";
 import { Reviews } from "./Reviews";
 import { Recommendations } from "../recommendations/Recommendations";
-import { Credits } from "../credits/Credits";
+import { Actors } from "../actors/Actors";
 import { VideoPlayer } from "../video/VideoPlayer";
 
 export const ShowDetail = ({ poster_path, original_title, overview, release_date, vote_average }) => {
   return (
     <div className={style.wrapper} >
       <div className={style.overviewContent}>
-        <div>
+        <div className={style.imgwrapper}>
           <img className={style.img} src={`${BASE_URL_IMAGES}${poster_path}`} alt={original_title} />
           <div className={style.average}>
             <Rating rating={Number(vote_average).toFixed(1)} />
@@ -38,7 +38,7 @@ export const ShowDetail = ({ poster_path, original_title, overview, release_date
         </div>
       </div>
       <div className={style.titleRecommendation}>
-        <Credits />
+        <Actors />
       </div>
       <div className={style.titleRecommendation}>
         <Recommendations />

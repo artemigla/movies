@@ -2,22 +2,17 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getCreditsMovies } from "../../components/redux/slices/creditsSlice";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { BASE_URL_IMAGES } from "../../constants/CONSTANTS";
+import Slider from "react-slick";
 import style from './style.module.scss';
+import { SETTINGS } from "../../constants/CONSTANTS";
 
-export const Credits = () => {
+export const Actors = () => {
   const { ids } = useParams();
   const dispatch = useDispatch();
   const selector = useSelector(state => state.credits.credits);
-  const counterActors = [];
-  const num = selector.length;
-
-  for (let i = 0; i < num; i++) {
-    counterActors.push(selector[i]);
-    if (i === 10) {
-      break;
-    }
-  }
 
   useEffect(() => {
     dispatch(getCreditsMovies(ids))
@@ -25,17 +20,17 @@ export const Credits = () => {
 
   return (
     <div className={style.container}>
-      <div className={style.title}>
-        <h3>Credits</h3>
-      </div>
-      <div className={style.carts}>
-        {counterActors.map((item) => (
+      {selector.length ? <div className={style.actors}>
+        <h2>Actors</h2>
+      </div> : null}
+      <Slider {...SETTINGS} className={style.slider}>
+        {selector.map((item) => (
           <div className={style.wrapper} key={item.id}>
-            <img className={style.img} src={`${BASE_URL_IMAGES}${item?.profile_path}`} alt={item.name} />
+            <img className={style.img ? style.noimg : style.img} src={`${BASE_URL_IMAGES}${item?.profile_path}`} alt="" />
             <p className={style.name}>{item.name}</p>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   )
 }
