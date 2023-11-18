@@ -4,13 +4,14 @@
     text-decoration: none;
   }
 .container {
-  display: flex;
   width: 100%;
-  height: 70px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #002f32;
+  height: 70vh;
     
+  .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } 
     .title {
       margin-left: 10px;
       font-size: 25px;
@@ -57,6 +58,34 @@
       align-items: center;
     }
   }
+
+       .wrapperslider{ 
+          display: flex;
+          object-fit: cover;
+          height: 120px;
+          
+          .slider{
+            margin: auto;
+            width: 80%;
+       
+            .wrapperimg{
+              display: flex;
+              align-items: center;
+              width: 100%;
+              
+              .img{
+                display: flex;
+                border-radius: 10px;
+                height: 35em;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 10px;
+                background-color: red;
+              }
+            } 
+        } 
+}
   
   @media (max-width: 768px) {
   .container {
@@ -99,7 +128,7 @@
   }
 }
   
-@media (min-width: 320px) {
+@media (max-width: 420px) {
   .container{
     .search{
       position: relative;

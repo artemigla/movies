@@ -4,7 +4,6 @@ import { BASE_URL, KEY } from "../../../constants/CONSTANTS";
 
 const initialState = {
   video: {},
-  isLoading: false
 }
 
 export const getVideoThunk = createAsyncThunk(
@@ -21,12 +20,9 @@ export const videoSlice = createSlice({
   reducers: {
     setVideo: (state, { payload }) => {
       state.video = payload;
-    },
-    setLoading: (state, action) => {
-      state.isLoading = action.payload
     }
   }
 })
 
-export const { setVideo, setLoading } = videoSlice.actions;
+export const { setVideo } = videoSlice.actions;
 export default videoSlice.reducer;

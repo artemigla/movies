@@ -19,7 +19,7 @@ export const Recommendations = () => {
   }, [dispatch, ids])
 
   return (
-    <div>
+    <div className={style.container}>
       {selector.length ? <div className={style.titleRecommendation}>
         <h2>Recommendation</h2>
       </div> : null}

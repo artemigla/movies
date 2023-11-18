@@ -32,7 +32,7 @@ export const ShowDetail = ({ poster_path, original_title, overview, release_date
               {dayjs(release_date).format("MMMM D, YYYY")}
             </span>
           </div>
-          <div>
+          <div className={style.videoWrapper}>
             <VideoPlayer />
           </div>
         </div>

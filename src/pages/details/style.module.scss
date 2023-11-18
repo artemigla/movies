@@ -2,7 +2,8 @@
     width: 90%;
     height: 250vh;
     background-color: #0e1b32;
-  
+    overflow-x: hidden; 
+    
     .wrapper{
       position: relative;
       left: 30px;
@@ -24,6 +25,11 @@
       .data{
         position: relative;
         margin: 30px 0 0 10px;
+      }
+
+      .videoWrapper{
+        width: 50%;
+        height: 30vh;
       }
     }
     .title{
@@ -62,12 +68,12 @@
   
       .detailsReviews{
         display: block;
-        font-size: 21px;
+        font-size: 16px;
         color: white;
       }
   
       .reviewsTitle{
-        font-size: 28px;
+        font-size: 21px;
         color: gray;
         margin-bottom: 10px;
       }
@@ -98,7 +104,6 @@
         flex-direction: column;
         
         .imgwrapper{
-          border: 1px solid white;
           .img{
             display: flex;
             justify-content: center;

@@ -5,18 +5,17 @@ export const PAGE = 1;
 export const KEY = 'c8b12b87395ea395f7a50b6f6f398e58';
 
 export const SETTINGS = {
-  dots: false,
+  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 9,
-  slidesToScroll: 3,
+  slidesToScroll: 2,
   initialSlide: 0,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 3,
         infinite: true,
         dots: false
       }
@@ -25,22 +24,19 @@ export const SETTINGS = {
       breakpoint: 768,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 3,
       }
     },
     {
       breakpoint: 720,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 2,
       }
     },
     {
       breakpoint: 412,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         sinitialSlide: 2,
-        lidesToScroll: 2,
       }
     },
 
@@ -49,7 +45,6 @@ export const SETTINGS = {
       settings: {
         slidesToShow: 2,
         sinitialSlide: 2,
-        slidesToScroll: 2
       }
     }
   ]

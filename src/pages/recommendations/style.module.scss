@@ -1,30 +1,37 @@
-.titleRecommendation{
-    color: white;
-    margin: 10px 0px 10px 0px;
+.container{
+    width: 90%;
+    
+    .titleRecommendation{
+        color: white;
+        margin: 10px 0px 10px 0px;
+    }
+     
+    .slider{
+        padding: 10px;
+        background-color: #0e1b32;
+        height: 140px;
+           
+        .wrapper{
+            border-radius: 10px;
+            .img{
+                margin: 10px;
+                width: 100px;
+                height: 120px;
+                border-radius: 10px;
+            }
+        }
+    }
 }
 
-.wrapper{
-    border-radius: 10px;
-    height: 180px;
-}
 
-.img{
-    margin: 10px;
-    width: 100px;
-    height: 120px;
-    border-radius: 10px;
-}
 
 .title{
     color: white;
     text-align: center;
     margin-bottom: 10px;
+    font-size: 12px;
 }
 
-.slider{
-    padding: 10px;
-    background-color: #0e1b32;
-}
 
 .noimg{
     background-image: url('../../assets/no-image-available28.png');
