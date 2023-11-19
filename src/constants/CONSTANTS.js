@@ -5,7 +5,7 @@ export const PAGE = 1;
 export const KEY = 'c8b12b87395ea395f7a50b6f6f398e58';
 
 export const SETTINGS = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 9,

@@ -1,28 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { BASE_URL_SEARCH, KEY, BASE_URL_IMAGES } from "../../constants/CONSTANTS";
+import { useDispatch } from "react-redux";
+import { BASE_URL_SEARCH, KEY } from "../../constants/CONSTANTS";
 import { getMoviesApi, setMovies } from "../redux/slices/moviesSlice";
 import style from './styles.module.scss';
 import { RxAvatar } from 'react-icons/rx';
-import Slider from "react-slick";
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 7000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  fade: true,
-  autoplaySpeed: 3000,
-  pauseOnHover: false
-}
 export const Header = () => {
   const [search, setSearch] = useState('');
   const dispatch = useDispatch()
-  const selector = useSelector(state => state?.movies?.movies);
-  console.log(selector)
+
   const handlerInput = (event) => {
     setSearch(event.target.value);
   }
@@ -60,15 +47,6 @@ export const Header = () => {
           </div>
         </div>
         <RxAvatar className={style.avatar} />
-      </div>
-      <div className={style.wrapperslider}>
-        <Slider {...settings} className={style.slider}>
-          {selector?.map((item) => (
-            <div key={item.id} className={style.wrapperimg}>
-              <img className={style.img} src={`${BASE_URL_IMAGES}${item?.backdrop_path}`} alt={item.title} />)
-            </div>))}
-        </Slider>
-
       </div>
     </header>
   )

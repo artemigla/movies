@@ -1,0 +1,39 @@
+.container {
+    .movies {
+        color: white;
+        font-size: 28px;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin: auto;
+        .wrappercarts {
+            position: relative;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            
+            margin: 5px;
+            .carts {
+                display: flex;
+                flex-direction: column;
+        
+                .img {
+                    width: 250px;
+                    height: 300px;
+                }
+
+                .title {
+                    color: white;
+                    font-size: 21px;
+                }
+
+                .rating {
+                    margin-top: -2.5em;
+                    
+                }
+            }
+        }
+    }
+}

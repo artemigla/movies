@@ -1,138 +1,153 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .wrapperslider {
+    margin-bottom: 12px;
+    .slider {
+      margin: auto;
+      width: 80%;
+
+      .wrapperimg {
+        .img {
+          display: flex;
+          border-radius: 10px;
+          height: 35em;
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .maincontent {
+    display: flex;
     position: relative;
-    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    height: 15em;
+    margin-bottom: 50px;
+
+    .wrapper {
+      position: relative;
+      width: 96%;
+      margin-left: auto;
+      margin-right: auto;
+
+      .movies {
+        color: white;
+        font-size: 21px;
+        margin-bottom: 12px;
+      }
+
+      .slidermovies {
+        //border: 1px solid red;
+        //height: 12em;
+        
+        .imgcontainer {
+          .img {
+            display: flex;
+            align-items: center;
+            margin: auto;
+            width: 140px;
+            height: 180px;
+            border-radius: 10px;
+            //border: 1px solid white;
+          }
+
+          .average {
+            position: relative;
+            top: -2.5em;
+            // left: 1em;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+  .container {
+    position: relative;
     display: grid;
-    width: 100%;
-    margin-bottom: 30px; 
-    overflow-x: hidden;
-    overflow-y: hidden;
 
     .wrapper {
       display: grid;
-      margin-bottom: 30px;
-      width: 97%;
-      margin: 0 auto;
-      grid-gap: 1em;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
-    }
-      
-    .cards{
-      display: flex;
-      flex-direction: column; 
-      position: relative;
-      margin-top:10vh; 
+      grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+      overflow-x: hidden;
+      overflow-y: hidden;
+      .cards {
+        margin: 10px;
+        position: relative;
+        margin: 0 auto;
+        width: 180px;
+
         .link {
           display: flex;
           position: relative;
-          margin: 0 auto; 
-         
+          font-size: 25px;
+          margin-right: auto;
+
           .img {
-            position: relative;
+            display: flex;
             border-radius: 12px;
+            margin: 0 auto;
             background-size: cover;
-            width: 250px;
-            height: 350px;
+            width: 150px;
+            height: 250px;
             cursor: pointer;
-            object-fit: contain; 
-            margin-left: 1.4em;
+            margin-left: 1.2em;
           }
-            
-          .average{
+
+          .average {
+            position: relative;
+            top: 6.5em;
+            left: -5.5em;
+            border-radius: 50%;
+            font-size: 30px;
+          }
+        }
+
+        .title {
+          position: relative;
+          color: white;
+          font-size: 17px;
+          margin-top: auto;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 319px) {
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    overflow-x: hidden;
+
+    .wrapper {
+      .cards {
+        margin: 10px;
+        position: relative;
+
+        .link {
+          .average {
             position: relative;
             top: 19em;
             left: -16em;
             border-radius: 50%;
           }
         }
-      }
-  
-    .title{
-      position: relative;
-      color: white;
-      font-size: 21px;
-      margin-top: auto;
-      text-align: center;
-    }
-  }
-  
-  @media screen and (max-width: 720px) {
-    .container {
-      position: relative;
-      display: grid;
-      
-      .wrapper{
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
-        overflow-x: hidden;
-        overflow-y: hidden;
-        .cards{
-          margin: 10px;
-          position: relative;
-          margin: 0 auto;
-          width: 180px;
-           
-            .link {
-              display: flex;
-              position: relative;
-              font-size: 25px;
-              margin-right: auto; 
-  
-             .img{
-                display: flex;
-                border-radius: 12px;
-                margin: 0 auto;
-                background-size: cover;
-                width: 150px;
-                height: 250px;
-                cursor: pointer;
-                margin-left: 1.2em;
-              }
-  
-              .average{
-                position: relative;
-                top: 6.5em;
-                left: -5.5em;
-                border-radius: 50%;
-                font-size: 30px;
-              }
-            }
-           
-            .title{
-              position: relative;
-              color: white;
-              font-size: 17px;
-              margin-top: auto;
-              text-align: center;
-            }
-          }
-        }
-    }
-  }
-  
-  @media screen and (max-width: 319px) {
-   .container { 
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      overflow-x: hidden; 
-      
-      .wrapper{ 
-        .cards{
-          margin: 10px;
-          position: relative;
-          
-          .link{
-            .average{
-              position: relative;
-              top: 19em;
-              left: -16em;
-              border-radius: 50%;
-            }
-          }
-          .title{
-            font-size: 12px;
-          }
+        .title {
+          font-size: 12px;
         }
       }
     }
   }
+}
