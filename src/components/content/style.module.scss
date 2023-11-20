@@ -7,6 +7,7 @@
 
   .wrapperslider {
     margin-bottom: 12px;
+
     .slider {
       margin: auto;
       width: 80%;
@@ -41,13 +42,11 @@
       .movies {
         color: white;
         font-size: 21px;
-        margin-bottom: 12px;
       }
 
       .slidermovies {
-        //border: 1px solid red;
-        //height: 12em;
-        
+        margin-top: 12px;
+
         .imgcontainer {
           .img {
             display: flex;
@@ -56,13 +55,11 @@
             width: 140px;
             height: 180px;
             border-radius: 10px;
-            //border: 1px solid white;
           }
 
           .average {
             position: relative;
             top: -2.5em;
-            // left: 1em;
             border-radius: 50%;
           }
         }
@@ -70,6 +67,7 @@
     }
   }
 }
+
 @media screen and (max-width: 720px) {
   .container {
     position: relative;
@@ -80,6 +78,7 @@
       grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
       overflow-x: hidden;
       overflow-y: hidden;
+
       .cards {
         margin: 10px;
         position: relative;
@@ -144,6 +143,7 @@
             border-radius: 50%;
           }
         }
+
         .title {
           font-size: 12px;
         }

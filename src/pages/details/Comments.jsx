@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getReviewsToMovies } from "../../components/redux/slices/reviewsSlice";
 import style from './style.module.scss';
 
-export const Reviews = () => {
+export const Comments = () => {
   const { ids } = useParams();
 
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export const Reviews = () => {
 
   return (
     <div className={style.reviews}>
-      <div className={style.reviewsTitle}>Reviews ({selector.length})</div>
+      <div className={style.reviewsTitle}>Comments ({selector.length})</div>
       {selector.length ? selector?.map((item) => (
         <div key={item.id}>
           <details className={style.detailsReviews}>
@@ -26,7 +26,7 @@ export const Reviews = () => {
             <i className={style.content}>{item.content}</i>
           </details>
         </div>
-      )) : <h3 style={{ color: "white" }}>There are no reviews </h3>}
+      )) : <h3 style={{ color: "white" }}>There are no comments </h3>}
     </div>
   )
 }

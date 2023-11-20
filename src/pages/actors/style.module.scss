@@ -1,23 +1,23 @@
-.container{
+.container {
   margin-top: 12%;
   width: 90%;
-  
-  .actors{
+
+  .actors {
     color: white;
     margin: 3px 0px 3px 0px;
   }
-    
-  .slider{
+
+  .slider {
     background-color: #0e1b32;
     margin-bottom: 35px;
-    
-    .wrapper{
-      .img{
-        border-radius: 10px; 
+
+    .wrapper {
+      .img {
+        border-radius: 10px;
       }
 
-      .noimg{
-        background-image: url('../../assets/no-image-available28.png');
+      .noimg {
+        background-image: url("../../assets/no-image-available28.png");
         background-size: cover;
         height: 120px;
         width: 100px;
@@ -27,7 +27,7 @@
         border-radius: 10px;
       }
 
-      .name{
+      .name {
         color: white;
         font-size: 12px;
         text-align: center;
@@ -37,12 +37,11 @@
 }
 
 @media screen and(max-width: 768px) {
-  .container{
+  .container {
     margin: 12px;
-    .slider{
-      
-      .wrapper{
-        .noimg{
+    .slider {
+      .wrapper {
+        .noimg {
           display: grid;
           gap: 10px;
         }
@@ -50,4 +49,3 @@
     }
   }
 }
-

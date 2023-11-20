@@ -1,69 +1,74 @@
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
 .container {
   width: 100%;
-    
-  .wrapper{
+
+  .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  } 
-    .title {
-      margin-left: 10px;
-      font-size: 25px;
-      color: white;
-    }
-  
-    .search {
-      display: flex;
+  }
+  .title {
+    margin-left: 10px;
+    font-size: 25px;
+    color: white;
+  }
+
+  .search {
+    display: flex;
+    position: relative;
+    height: 30px;
+
+    .clicksearch {
       position: relative;
-      height: 30px;
-      
-      .clicksearch {
-        position: relative;
-        width: 100px;
-        cursor: pointer;
-        border-radius: 0 15px 15px 0;
-        background: rgb(214,80,80);
-        background: linear-gradient(142deg, rgba(214,80,80,1) 0%, rgba(213,137,53,1) 30%, rgba(199,145,67,1) 70%, rgba(232,79,0,1) 100%);     }
-        padding: 0px 12px 2px 12px;
-        height: 30px;
-        
-      input {
-        outline: none;
-        font-size: 150%;
-        border: none;
-        padding: 0 0 0 12px;
-        border-radius: 15px 0 0 15px;
-      }
-  
-      .icon{
-        width: 30px;
-        height: 30px;
-        fill: #fff;
-        margin-left: 60px;
-      }
+      width: 100px;
+      cursor: pointer;
+      border-radius: 0 15px 15px 0;
+      background: rgb(214, 80, 80);
+      background: linear-gradient(
+        142deg,
+        rgba(214, 80, 80, 1) 0%,
+        rgba(213, 137, 53, 1) 30%,
+        rgba(199, 145, 67, 1) 70%,
+        rgba(232, 79, 0, 1) 100%
+      );
     }
-    
-    .avatar{
-      width: 50px;
-      height: 50px;
-      border-radius: 100%;
-      background-color: white;
-      margin-right: 10px;
-      align-items: center;
+    padding: 0px 12px 2px 12px;
+    height: 30px;
+
+    input {
+      outline: none;
+      font-size: 150%;
+      border: none;
+      padding: 0 0 0 12px;
+      border-radius: 15px 0 0 15px;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+      margin-left: 60px;
     }
   }
 
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: white;
+    margin-right: 10px;
+    align-items: center;
+  }
+}
 
-  
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   .container {
     .search {
-      width: 50%; 
+      width: 50%;
       font-size: 100%;
 
       .clicksearch {
@@ -72,61 +77,61 @@
         justify-content: center;
         align-items: center;
         position: relative;
-          
-        .icon{
+
+        .icon {
           margin-right: auto;
           margin-left: auto;
         }
       }
 
-        input {
-          outline: none;
-          border-radius: 15px 0 0 15px;
-          width: 100%;
-          border: none;
-          margin-left: -12px;
-        }
-    } 
+      input {
+        outline: none;
+        border-radius: 15px 0 0 15px;
+        width: 100%;
+        border: none;
+        margin-left: -12px;
+      }
+    }
 
     .title {
       margin-left: 10px;
       color: white;
       font-size: 17px;
     }
-    
-    .avatar{
+
+    .avatar {
       width: 35px;
       height: 35px;
     }
   }
 }
-  
+
 @media (max-width: 420px) {
-  .container{
-    .search{
+  .container {
+    .search {
       position: relative;
-        
-        .clicksearch{
-          position: relative;
-          display: flex; 
-            
-          .icon{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+
+      .clicksearch {
+        position: relative;
+        display: flex;
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
-      
-      .avatar{
-        width: 30px;
-        height: 30px;      
-      }
+    }
 
-      .title {
-        margin-left: 10px;
-        font-size: 12px;
-        color: white;
-      }
+    .avatar {
+      width: 30px;
+      height: 30px;
+    }
+
+    .title {
+      margin-left: 10px;
+      font-size: 12px;
+      color: white;
     }
   }
+}

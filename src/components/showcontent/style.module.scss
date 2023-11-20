@@ -1,24 +1,28 @@
 .container {
     .movies {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
         color: white;
-        font-size: 28px;
+        font-size: 35px;
+        bottom: 23px;
     }
     .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         margin: auto;
+
         .wrappercarts {
             position: relative;
             text-align: center;
             display: flex;
             justify-content: center;
             grid-template-columns: 1fr 1fr 1fr;
-            
             margin: 5px;
             .carts {
                 display: flex;
                 flex-direction: column;
-        
+
                 .img {
                     width: 250px;
                     height: 300px;
@@ -31,7 +35,6 @@
 
                 .rating {
                     margin-top: -2.5em;
-                    
                 }
             }
         }

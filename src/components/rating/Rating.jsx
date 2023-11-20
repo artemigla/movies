@@ -5,7 +5,7 @@ import style from './style.module.scss';
 
 export const Rating = ({ rating }) => {
   return (
-    <div className={style.container} >
+    <div className={style.container}>
       <CircularProgressbar
         value={rating}
         maxValue={10}

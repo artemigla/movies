@@ -3,14 +3,14 @@ import { BASE_URL_IMAGES } from "../../constants/CONSTANTS";
 import { Rating } from "../../components/rating/Rating";
 import style from './style.module.scss';
 import dayjs from "dayjs";
-import { Reviews } from "./Reviews";
+import { Comments } from "./Comments";
 import { Recommendations } from "../recommendations/Recommendations";
 import { Actors } from "../actors/Actors";
 import { VideoPlayer } from "../video/VideoPlayer";
 
 export const ShowDetail = ({ poster_path, original_title, overview, release_date, vote_average }) => {
   return (
-    <div className={style.wrapper} >
+    <div className={style.wrapper}>
       <div className={style.overviewContent}>
         <div className={style.imgwrapper}>
           <img className={style.img} src={`${BASE_URL_IMAGES}${poster_path}`} alt={original_title} />
@@ -44,7 +44,7 @@ export const ShowDetail = ({ poster_path, original_title, overview, release_date
         <Recommendations />
       </div>
       <div>
-        <Reviews />
+        <Comments />
       </div>
     </div>
   )
