@@ -2,55 +2,57 @@
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
 
-    .wrappercontainer {
-        width: 100%;
-        padding-top: 5px;
-        margin-bottom: 30px;
+    .wrapper {
+        width: 80%;
+        border: 1px solid white;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
 
-        .title {
-            font-size: 21px;
-            color: #979a9a;
-            padding: 3px;
-            border-radius: 3px;
-            border: 1px solid white;
-            background-color: #e3e4e8;
+        .wrapperimg {
+            display: flex;
+            flex-direction: column;
+            height: 50em;
+            margin-top: 3%;
+            width: 35%;
 
-            margin-left: 3%;
-        }
-        .slider {
-            padding: 10px;
-            width: 96%;
-            margin-left: auto;
-            margin-right: auto;
-
-            .wrapper {
+            .average {
+                position: relative;
+                top: -2.5em;
+                border-radius: 50%;
+            }
+            .img {
+                object-fit: fill;
+                width: 400px;
+                height: 500px;
                 border-radius: 10px;
-                width: 96%;
-                padding: -10px;
-                align-items: center;
+            }
 
-                .imgwrapper {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                    .img {
-                        width: 140px;
-                        height: 180px;
-                        border-radius: 10px;
-                    }
+            .title {
+                margin-top: 12px;
+                color: white;
+                text-align: center;
+                font-size: 25px;
+                margin-top: -1em;
+                width: 90%;
+            }
+        }
 
-                    .average {
-                        position: relative;
-                        top: -2.5em;
-                        left: -3.5em;
-                        border-radius: 50%;
-                    }
-                }
+        .content {
+            margin-top: 3%;
+            width: 60%;
+            padding: 5px 0 5px 0;
+
+            .content,
+            i,
+            p,
+            span {
+                color: white;
+                font-size: 17px;
+                font-weight: bold;
             }
         }
     }

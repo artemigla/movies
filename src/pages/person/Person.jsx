@@ -13,6 +13,7 @@ export const Person = () => {
     useEffect(() => {
         try {
             dispatch(getPersonApi(ids))
+            window.scroll(0, 0)
         } catch (error) {
             console.log(error);
         }

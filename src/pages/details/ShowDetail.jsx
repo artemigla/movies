@@ -22,10 +22,11 @@ export const ShowDetail = ({ id, poster_path, original_title, overview, release_
         </div>
         <div className={style.detail}>
           <div className={style.title}>
-            <h3>{original_title}</h3>
+            <h3>{original_title} <span>({parseInt(release_date)})</span></h3>
+            
           </div>
           <div className={style.overview}>
-            <i >{overview}</i>
+            <i>{overview}</i>
           </div>
           <div>
           </div>

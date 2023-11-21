@@ -13,6 +13,7 @@ export const Details = () => {
 
   useEffect(() => {
     dispatch(getDetailMovie(ids))
+    window.scroll(0, 0)
   }, [dispatch, ids])
 
   return (

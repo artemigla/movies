@@ -7,6 +7,7 @@
 
   .wrapperslider {
     margin-bottom: 12px;
+
     .slider {
       margin: auto;
       width: 80%;
@@ -62,6 +63,55 @@
           .average {
             position: relative;
             top: -2.5em;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .wrappercontainer {
+    width: 100%;
+    padding-top: 5px;
+    margin-bottom: 30px;
+
+    .title {
+      font-size: 21px;
+      color: #979a9a;
+      padding: 3px;
+      border-radius: 3px;
+      border: 1px solid white;
+      background-color: #e3e4e8;
+      margin-left: 3%;
+    }
+    .slider {
+      padding: 10px;
+      width: 96%;
+      margin-left: auto;
+      margin-right: auto;
+
+      .wrapper {
+        border-radius: 10px;
+        width: 96%;
+        padding: -10px;
+        align-items: center;
+
+        .imgwrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .img {
+            width: 140px;
+            height: 180px;
+            border-radius: 10px;
+          }
+
+          .average {
+            position: relative;
+            top: -2.5em;
+            left: -3.5em;
             border-radius: 50%;
           }
         }
