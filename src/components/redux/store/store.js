@@ -7,6 +7,7 @@ import recommendationsSlice from "../slices/recommendationsSlice";
 import reviewsSlice from "../slices/reviewsSlice";
 import videoSlice from "../slices/videoSlice";
 import tvSlice from "../slices/tvSlice";
+import genresSlice from "../slices/genresSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,7 +17,8 @@ export const store = configureStore({
     reviews: reviewsSlice,
     credits: creditsSlice,
     recommendations: recommendationsSlice,
-    tvshow: tvSlice
+    tvshow: tvSlice,
+    genres: genresSlice
   },
   middleware: [thunk]
 })

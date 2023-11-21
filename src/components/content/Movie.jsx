@@ -7,6 +7,7 @@ import style from './style.module.scss';
 import { Rating } from "../rating/Rating.jsx";
 import { Link } from "react-router-dom";
 import { Tvshow } from "../tvshow/Tvshow.jsx";
+import { Genres } from "../genres/Genres.jsx";
 
 const settings = {
   dots: false,
@@ -28,7 +29,6 @@ export const Movie = () => {
   useEffect(() => {
     try {
       dispatch(getMoviesApi())
-
     } catch (err) {
       console.log(err)
     }
@@ -36,6 +36,7 @@ export const Movie = () => {
 
   return (
     <div className={style.container}>
+      <Genres />
       <div className={style.wrapperslider}>
         <Slider {...settings} className={style.slider}>
           {selector?.map((item) => (

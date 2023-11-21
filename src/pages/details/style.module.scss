@@ -23,8 +23,14 @@
     font-size: 21px;
 
     .data {
-      position: relative;
-      margin: 30px 0 0 10px;
+      display: flex;
+      align-items: center;
+      font-size: 17px;
+      margin: 15px 0 15px 15px;
+
+      .genre {
+        margin-left: 21px;
+      }
     }
 
     .videoWrapper {

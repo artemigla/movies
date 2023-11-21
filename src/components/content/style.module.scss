@@ -7,7 +7,6 @@
 
   .wrapperslider {
     margin-bottom: 12px;
-
     .slider {
       margin: auto;
       width: 80%;
@@ -31,7 +30,6 @@
     margin-right: auto;
     width: 98%;
     height: 15em;
-    margin-bottom: 50px;
 
     .wrapper {
       position: relative;
@@ -40,8 +38,12 @@
       margin-right: auto;
 
       .movies {
-        color: white;
+        color: #979a9a;
         font-size: 21px;
+        background-color: #e3e4e8;
+        border: 1px solid white;
+        border-radius: 3px;
+        padding: 3px;
       }
 
       .slidermovies {

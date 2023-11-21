@@ -4,15 +4,22 @@
     overflow-y: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
     width: 100%;
 
     .wrappercontainer {
         width: 100%;
+        padding-top: 5px;
+        margin-bottom: 30px;
+
         .title {
             font-size: 21px;
-            color: white;
-            margin-left: 2%;
+            color: #979a9a;
+            padding: 3px;
+            border-radius: 3px;
+            border: 1px solid white;
+            background-color: #e3e4e8;
+
+            margin-left: 3%;
         }
         .slider {
             padding: 10px;
@@ -34,17 +41,6 @@
                     .img {
                         width: 140px;
                         height: 180px;
-                    }
-
-                    .noimg {
-                        background-image: url("../../assets/no-image-available28.png");
-                        background-size: cover;
-                        width: 140px;
-                        height: 180px;
-                        display: flex;
-                        object-fit: fill;
-                        margin-left: auto;
-                        margin-right: auto;
                         border-radius: 10px;
                     }
 

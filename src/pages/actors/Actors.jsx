@@ -13,7 +13,7 @@ export const Actors = () => {
   const { ids } = useParams();
   const dispatch = useDispatch();
   const selector = useSelector(state => state.credits.credits);
-
+  // console.log(selector);
   useEffect(() => {
     dispatch(getCreditsMovies(ids))
   }, [dispatch, ids])

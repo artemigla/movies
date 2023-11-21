@@ -17,9 +17,8 @@ export const Header = () => {
   useEffect(() => {
     try {
       dispatch(getMoviesApi())
-
     } catch (error) {
-
+      console.log(error);
     }
   }, [dispatch])
 
