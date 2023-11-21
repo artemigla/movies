@@ -1,0 +1,41 @@
+.container {
+    width: 95%;
+    height: 50em;
+    margin-top: 100px;
+    background-color: #0e1b32;
+    overflow-x: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        
+        .content {
+            display: flex;
+            flex-direction: row;
+            margin-left: 3%;
+            width: 90%;
+
+            .img {
+                width: 300px;
+                height: 400px;
+                border-radius: 10px;
+            }
+
+            .title {
+                font-size: 25px;
+                font-weight: 700;
+                color: silver;
+                white-space: nowrap;
+            }
+
+            .biography {
+                color: white;
+                margin-left: 12px;
+            }
+        }
+    }
+}

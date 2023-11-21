@@ -9,7 +9,7 @@ import { Actors } from "../actors/Actors";
 import { VideoPlayer } from "../video/VideoPlayer";
 import { Genres } from "../../components/genres/Genres";
 
-export const ShowDetail = ({ poster_path, original_title, overview, release_date, vote_average }) => {
+export const ShowDetail = ({ id, poster_path, original_title, overview, release_date, vote_average }) => {
 
   return (
     <div className={style.wrapper}>
@@ -43,7 +43,7 @@ export const ShowDetail = ({ poster_path, original_title, overview, release_date
         </div>
       </div>
       <div className={style.titleRecommendation}>
-        <Actors />
+        <Actors id={id} />
       </div>
       <div className={style.titleRecommendation}>
         <Recommendations />

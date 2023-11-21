@@ -5,6 +5,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { Details } from "./pages/details/Details";
 import style from './style.module.scss';
 import { ShowMovies } from "./components/showcontent/ShowMovies";
+import { Person } from "./pages/person/Person";
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         <Route path="/" element={<Movie />} />
         <Route path="details/:ids" element={<Details />} />
         <Route path="showcontent/" element={<ShowMovies />} />
+        <Route path="person/:ids" element={<Person/>}/>
       </Routes>
       <Outlet />
     </div>

@@ -1,22 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getCreditsMovies } from "../../components/redux/slices/creditsSlice";
+import { getActorsMovies } from "../../components/redux/slices/actorsSlice";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BASE_URL_IMAGES } from "../../constants/CONSTANTS";
 import Slider from "react-slick";
 import style from './style.module.scss';
 import { SETTINGS } from "../../constants/CONSTANTS";
+import { Link } from "react-router-dom";
 
-export const Actors = () => {
-  const { ids } = useParams();
+export const Actors = ({id}) => {
+
   const dispatch = useDispatch();
-  const selector = useSelector(state => state.credits.credits);
-  // console.log(selector);
+  const selector = useSelector(state => state.actors.actors);
+
   useEffect(() => {
-    dispatch(getCreditsMovies(ids))
-  }, [dispatch, ids])
+    dispatch(getActorsMovies(id))
+  }, [dispatch, id])
 
   return (
     <div className={style.container}>
@@ -25,10 +25,10 @@ export const Actors = () => {
       </div> : null}
       <Slider {...SETTINGS} className={style.slider}>
         {selector.map((item) => (
-          <div className={style.wrapper} key={item.id}>
+          <Link to={`/person/${item.id}`} className={style.wrapper} key={item.id}>
             <img className={style.img ? style.noimg : style.img} src={`${BASE_URL_IMAGES}${item?.profile_path}`} alt="" />
             <p className={style.name}>{item.name}</p>
-          </div>
+          </Link>
         ))}
       </Slider>
     </div>

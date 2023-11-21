@@ -3,26 +3,26 @@ import axios from "axios";
 import { BASE_URL, KEY } from "../../../constants/CONSTANTS";
 
 const initialState = {
-  credits: []
+  actors: []
 }
 
-export const getCreditsMovies = createAsyncThunk(
-  'credits/getCreditsMovies',
+export const getActorsMovies = createAsyncThunk(
+  'credits/getActorsMovies',
   async (id, { dispatch }) => {
     const response = await axios.get(`${BASE_URL}/movie/${id}/credits?api_key=${KEY}`)
-    dispatch(setCredits(response.data.cast))
+    dispatch(setActors(response.data.cast))
   }
 )
 
-export const creditsSlice = createSlice({
+export const actorsSlice = createSlice({
   name: 'credits',
   initialState,
   reducers: {
-    setCredits: (state, action) => {
-      state.credits = action.payload
+    setActors: (state, action) => {
+      state.actors = action.payload
     }
   }
 })
 
-export const { setCredits } = creditsSlice.actions;
-export default creditsSlice.reducer;
+export const { setActors } = actorsSlice.actions;
+export default actorsSlice.reducer;
