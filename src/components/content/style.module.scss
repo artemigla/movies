@@ -30,8 +30,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 98%;
-    height: 15em;
-
+    margin-top: 21px;
     .wrapper {
       position: relative;
       width: 96%;
@@ -59,6 +58,7 @@
             height: 180px;
             border-radius: 10px;
           }
+          margin-bottom: 12px;
 
           .average {
             position: relative;
@@ -71,9 +71,10 @@
   }
 
   .wrappercontainer {
-    width: 100%;
-    padding-top: 5px;
+    width: 98%;
     margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 
     .title {
       font-size: 21px;
@@ -82,10 +83,10 @@
       border-radius: 3px;
       border: 1px solid white;
       background-color: #e3e4e8;
-      margin-left: 3%;
+      margin-left: 2%;
     }
     .slider {
-      padding: 10px;
+      // padding: 10px;
       width: 96%;
       margin-left: auto;
       margin-right: auto;
@@ -93,7 +94,6 @@
       .wrapper {
         border-radius: 10px;
         width: 96%;
-        padding: -10px;
         align-items: center;
 
         .imgwrapper {
@@ -101,7 +101,7 @@
           align-items: center;
           justify-content: center;
           flex-direction: column;
-
+          padding-top: 12px;
           .img {
             width: 140px;
             height: 180px;

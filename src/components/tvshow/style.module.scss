@@ -6,7 +6,6 @@
 
     .wrapper {
         width: 80%;
-        border: 1px solid white;
         margin-left: auto;
         margin-right: auto;
         display: flex;
@@ -16,7 +15,6 @@
             display: flex;
             flex-direction: column;
             height: 50em;
-            margin-top: 3%;
             width: 35%;
 
             .average {
@@ -32,7 +30,6 @@
             }
 
             .title {
-                margin-top: 12px;
                 color: white;
                 text-align: center;
                 font-size: 25px;
@@ -53,6 +50,42 @@
                 color: white;
                 font-size: 17px;
                 font-weight: bold;
+            }
+        }
+    }
+}
+
+.containertv {
+    width: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 210px);
+    position: relative;
+    gap: 20px;
+    
+    .wrapper {
+        display: flex;
+        width: 99%;
+        align-items: center;
+        justify-content: center;
+        
+        .wrapperimg {
+            box-shadow: 0px 0px 10px 7px rgba(71, 123, 255, 0.78);
+
+            .img {
+                display: flex;
+                width: 210px;
+                height: 250px;
+                border-radius: 10px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .title {
+                font-size: 17px;
+                color: white;
+                text-align: center;
+                white-space: wrap;
             }
         }
     }

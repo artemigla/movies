@@ -7,6 +7,7 @@ import style from './style.module.scss';
 import { ShowMovies } from "./components/showcontent/ShowMovies";
 import { Person } from "./pages/person/Person";
 import { Tvshow } from "./components/tvshow/Tvshow";
+import { Tvshowcontent } from "./components/tvshow/Tvshowcontent";
 
 export const App = () => {
   return (
@@ -18,6 +19,7 @@ export const App = () => {
         <Route path="showcontent/" element={<ShowMovies />} />
         <Route path="person/:ids" element={<Person/>}/>
         <Route path="tvshow/:ids" element={<Tvshow/>}/>
+        <Route path="tvshowcontent/" element={<Tvshowcontent/>}/>
       </Routes>
       <Outlet />
     </div>

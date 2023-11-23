@@ -64,10 +64,10 @@ export const Movie = () => {
       </div>
 
       <div className={style.wrappercontainer}>
-          <span className={style.title}>Tv show</span>
+          <Link to={'/tvshowcontent/'} className={style.title}>Tv show</Link>
           <Slider {...SETTINGS} className={style.slider}>
             {selectorShow.map(({ id, backdrop_path, vote_average }) => (
-              <Link to={`tvshow/${id}`} key={id} className={style.wrapper}>
+              <Link to={`/tvshow/${id}`} key={id} className={style.wrapper}>
                 <div className={style.imgwrapper}>
                   <img className={style.img ? style.img : null} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt={''} />
                   <span className={style.average}>
