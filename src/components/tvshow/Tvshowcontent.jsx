@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { BASE_URL_IMAGES } from '../../constants/CONSTANTS';
 import { Link } from 'react-router-dom';
 import style from './style.module.scss';
+
 export const Tvshowcontent = () => {
 
     const selector = useSelector(state => state?.tvshow?.tvshow);

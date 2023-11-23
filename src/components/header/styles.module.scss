@@ -12,17 +12,31 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .title {
     margin-left: 10px;
     font-size: 25px;
     color: white;
+    white-space: nowrap;
+    transition: transform 0.2s;
+    position: relative;
+    width: 200px;
   }
 
   .search {
     display: flex;
     position: relative;
     height: 30px;
+
+    .skeleton {
+      transition: transform 0.2s;
+      position: relative;
+      overflow: hidden;
+      width: 410px;
+      height: 29px;
+      border-radius: 15px;
+      border: none;
+    }
 
     .clicksearch {
       position: relative;
@@ -64,6 +78,7 @@
     background-color: white;
     margin-right: 10px;
     align-items: center;
+    transition: transform 0.2s;
   }
 }
 
