@@ -91,6 +91,7 @@
       background-color: #e3e4e8;
       margin-left: 2%;
     }
+
     .slider {
       width: 96%;
       margin-left: auto;
@@ -132,86 +133,36 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .container {
+    margin-top: 3%;
     position: relative;
-    display: grid;
 
-    .wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
-      overflow-x: hidden;
-      overflow-y: hidden;
+    .wrapperslider{
+      height: 300px;
 
-      .cards {
-        margin: 10px;
-        position: relative;
-        margin: 0 auto;
-        width: 180px;
-
-        .link {
-          display: flex;
-          position: relative;
-          font-size: 25px;
-          margin-right: auto;
-
+      .slider {
+        margin: auto;
+        width: 95%;
+  
+        .wrapperimg {
           .img {
             display: flex;
-            border-radius: 12px;
-            margin: 0 auto;
-            background-size: cover;
-            width: 150px;
-            height: 250px;
-            cursor: pointer;
-            margin-left: 1.2em;
+            height: 20em;
+            width: 100%;
+            border-radius: 10px;
           }
-
-          .average {
-            position: relative;
-            top: 6.5em;
-            left: -5.5em;
-            border-radius: 50%;
-            font-size: 30px;
-          }
-        }
-
-        .title {
-          position: relative;
-          color: white;
-          font-size: 17px;
-          margin-top: auto;
-          text-align: center;
         }
       }
     }
-  }
-}
+    .maincontent {
+      width: 90%;
+    }
 
-@media screen and (max-width: 319px) {
-  .container {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    overflow-x: hidden;
-
-    .wrapper {
-      .cards {
-        margin: 10px;
-        position: relative;
-
-        .link {
-          .average {
-            position: relative;
-            top: 19em;
-            left: -16em;
-            border-radius: 50%;
-          }
-        }
-
-        .title {
-          font-size: 12px;
-        }
-      }
+    .wrappercontainer{
+      width: 90%;
     }
   }
+
+  
 }

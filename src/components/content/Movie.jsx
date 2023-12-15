@@ -29,7 +29,7 @@ export const Movie = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [title, setTitle] = useState("")
 
-  //window.scroll(0, 0);
+  window.scroll(0, 0);
 
   useEffect(() => {
     try {

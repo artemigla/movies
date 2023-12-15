@@ -10,7 +10,6 @@ export const getGenreApi = createAsyncThunk(
     'genres/getGenreApi',
     async (id, { dispatch }) => {
         const response = await axios.get(`${BASE_URL}movie/${id}?api_key=${KEY}`)
-        console.log('response.data', response.data);
         dispatch(setGenres(response.data))
     }
 )

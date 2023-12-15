@@ -84,71 +84,96 @@
 
 @media (max-width: 768px) {
   .container {
-    .search {
-      width: 50%;
-      font-size: 100%;
+    .wrapper {
+      .title {
+        width: 25%;
+      }
 
-      .clicksearch {
-        width: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+      .search {
+        width: 50%;
+        font-size: 100%;
+        margin-right: auto;
 
-        .icon {
-          margin-right: auto;
-          margin-left: auto;
+        .clicksearch {
+          width: 30%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          .icon {
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+
+        input {
+          outline: none;
+          border-radius: 15px 0 0 15px;
+          width: 100%;
+          border: none;
+          margin-left: -12px;
         }
       }
 
-      input {
-        outline: none;
-        border-radius: 15px 0 0 15px;
-        width: 100%;
-        border: none;
-        margin-left: -12px;
+      .title {
+        margin-left: 10px;
+        color: white;
+        font-size: 17px;
       }
-    }
 
-    .title {
-      margin-left: 10px;
-      color: white;
-      font-size: 17px;
-    }
-
-    .avatar {
-      width: 35px;
-      height: 35px;
+      .avatar {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
 }
 
 @media (max-width: 420px) {
   .container {
-    .search {
-      position: relative;
+    .wrapper {
+      .title {
+        width: 25%;
+      }
 
-      .clicksearch {
+      .search {
+        font-size: 70%;
         position: relative;
-        display: flex;
 
-        .icon {
+        .clicksearch {
+          position: relative;
           display: flex;
-          justify-content: center;
-          align-items: center;
+          height: 90%;
+          margin: auto;
+
+          .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
-    }
 
-    .avatar {
-      width: 30px;
-      height: 30px;
-    }
+      .avatar {
+        width: 30px;
+        height: 30px;
+      }
 
-    .title {
-      margin-left: 10px;
-      font-size: 12px;
-      color: white;
+      .title {
+        margin-left: 10px;
+        font-size: 12px;
+        color: white;
+      }
+
+      input {
+        outline: none;
+        margin: auto;
+        border-radius: 15px 0 0 15px;
+        height: 90%;
+        border: none;
+        margin-left: -12px;
+      }
     }
   }
 }
