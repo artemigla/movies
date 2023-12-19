@@ -41,3 +41,54 @@
         }
     }
 }
+@media screen and (max-width: 810px) {
+    .container {
+        .wrapper {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+@media screen and (max-width: 1280px) {
+    .container {
+        .wrapper {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .container {
+        overflow-x: hidden;
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .wrappercarts {
+                .carts {
+                    width: 190px;
+                    display: flex;
+                    align-items: center;
+
+                    .img {
+                        width: auto;
+                        height: 200px;
+                    }
+
+                    .rating {
+                        margin-left: -63%;
+                        margin-top: -30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+        .wrapper {
+            grid-template-columns: auto;
+        }
+    }
+}
