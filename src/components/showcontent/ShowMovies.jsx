@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 export const ShowMovies = () => {
 
   const selector = useSelector(state => state.movies.movies);
-
+  window.scroll(0, 0)
   return (
     <div className={style.container}>
       <div className={style.movies}>

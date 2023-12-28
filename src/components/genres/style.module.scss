@@ -1,7 +1,9 @@
 .container {
     display: flex;
-    width: 95%;
-
+    position: relative;
+    grid-template-columns: auto;
+    width: 100%;
+    
     .wrapper {
         margin: 5px;
         border: 1px solid silver;

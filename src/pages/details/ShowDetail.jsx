@@ -27,15 +27,13 @@ export const ShowDetail = ({ id, poster_path, original_title, overview, release_
           <div className={style.overview}>
             <i>{overview}</i>
           </div>
-          <div>
-          </div>
           <div className={style.data} >
             <span>
               {dayjs(release_date).format("MMMM D, YYYY")}
             </span>
-            <span className={style.genre}>
+            <div className={style.genre}>
               <Genres />
-            </span>
+            </div>
           </div>
           <div className={style.videoWrapper}>
             <VideoPlayer />

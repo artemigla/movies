@@ -130,7 +130,7 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 428px) {
   .container {
     .wrapper {
       .title {
@@ -140,7 +140,7 @@
       .search {
         font-size: 70%;
         position: relative;
-
+        
         .clicksearch {
           position: relative;
           display: flex;
@@ -152,6 +152,11 @@
             justify-content: center;
             align-items: center;
           }
+        }
+
+        .skeleton{
+          border: none;
+          width: 50vw;
         }
       }
 

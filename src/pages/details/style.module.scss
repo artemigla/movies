@@ -35,7 +35,8 @@
 
     .videoWrapper {
       width: 50%;
-      height: 30vh;
+      height: 40vh;
+      margin-right: auto;
     }
   }
   .title {
@@ -140,6 +141,42 @@
 
           .title {
             font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .wrapper {
+    .overviewContent {
+      .imgwrapper {
+        width: 90%;
+        margin-top: 30px;
+      }
+
+      .detail {
+        width: 88%;
+        position: relative;
+
+        .overview {
+          width: 95%;
+        }
+
+        .data {
+          display: grid;
+          grid-template-columns: auto;
+          position: relative;
+          width: 50%;
+          margin-left: -45%;
+
+          .genre {
+            display: flex;
+            margin-left: -1%;
+            flex-direction: column;
+            grid-template-columns: auto;
+            width: 100%;
           }
         }
       }
