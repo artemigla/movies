@@ -22,10 +22,8 @@ export const ShowPerson = ({ name, birthday, place_of_birth, profile_path, known
                         <span>{place_of_birth} </span>
                         <p>{birthday}</p>
                     </div>
-                    
                 </div>
             </div>
-
         </div>
     );
 }

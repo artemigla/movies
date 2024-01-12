@@ -50,12 +50,14 @@
         margin-top: 12px;
 
         .imgcontainer {
+          height: 20vh;
+
           .img {
             display: flex;
             align-items: center;
             margin: auto;
             width: 140px;
-            height: 180px;
+            height: 150px;
             border-radius: 10px;
           }
           margin-bottom: 12px;
@@ -96,7 +98,7 @@
       width: 96%;
       margin-left: auto;
       margin-right: auto;
-
+      
       .wrapper {
         border-radius: 10px;
         width: 96%;
@@ -108,7 +110,7 @@
           justify-content: center;
           flex-direction: column;
           padding-top: 12px;
-
+          height: 25vh;
           .skeleton {
             height: 50px;
             width: 50px;
@@ -117,7 +119,7 @@
 
           .img {
             width: 140px;
-            height: 180px;
+            height: 150px;
             border-radius: 10px;
           }
 

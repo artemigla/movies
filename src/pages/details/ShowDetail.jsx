@@ -9,13 +9,13 @@ import { Actors } from "../actors/Actors";
 import { VideoPlayer } from "../video/VideoPlayer";
 import { Genres } from "../../components/genres/Genres";
 
-export const ShowDetail = ({ id, poster_path, original_title, overview, release_date, vote_average }) => {
+export const ShowDetail = ({ id, backdrop_path, original_title, overview, release_date, vote_average }) => {
 
   return (
     <div className={style.wrapper}>
       <div className={style.overviewContent}>
         <div className={style.imgwrapper}>
-          <img className={style.img} src={`${BASE_URL_IMAGES}${poster_path}`} alt={original_title} />
+          <img className={style.img} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt={original_title} />
           <div className={style.average}>
             <Rating rating={Number(vote_average).toFixed(1)} />
           </div>
