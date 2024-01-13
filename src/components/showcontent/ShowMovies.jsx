@@ -32,7 +32,7 @@ export const ShowMovies = () => {
             <div className={style.carts}>
               <SkeletonTheme color="#505050" highlightColor="#999">
                 {!isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt="" />
-                  : <Skeleton duration={2} className={style.img} />
+                  : <Skeleton duration={2} className={style.imgsceleton} />
                 }
               </SkeletonTheme>
               <div className={style.rating} >
@@ -47,7 +47,6 @@ export const ShowMovies = () => {
                     <span className={style.title}>{title}</span> :
                     <Skeleton duration={2} className={style.titleSceleton} />}
                 </SkeletonTheme>
-              
             </div>
           </Link>
         ))}

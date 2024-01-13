@@ -82,24 +82,39 @@
     .container {
         overflow-x: hidden;
 
+        .movies {
+            width: 50%;
+        }
+
         .wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-
+            position: relative;
             .wrappercarts {
+                position: relative;
                 .carts {
                     width: 190px;
-                    display: flex;
-                    align-items: center;
 
                     .img {
                         width: auto;
                         height: 200px;
                     }
 
+                    .imgsceleton{
+                        width: 170px;
+                        height: 200px;
+                    }
+
                     .rating {
-                        margin-left: -63%;
-                        margin-top: -30px;
+                        margin-top: -1.5em;
+    
+                        .skeleton {
+                            margin-top: -2.5em;
+                            margin-left: 3.8em;
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                        }
                     }
                 }
             }
@@ -110,7 +125,39 @@
 @media screen and (max-width: 360px) {
     .container {
         .wrapper {
-            grid-template-columns: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .wrappercarts {
+                .carts {
+                    width: 120px;
+                    display: flex;
+                    align-items: center;
+
+                    .img {
+                        width: 120px;
+                        height: 150px;
+                    }
+
+                    .imgsceleton{
+                        width: 120px;
+                        height: 150px;
+                    }
+
+                    .rating {
+                        margin-top: -1.5em;
+                        margin-left: -3.8em;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+
+                        .skeleton {
+                            margin-top: -3.5em;
+                            margin-left: -5em;    
+                        }
+                    }
+                }
+            }
         }
     }
 }
