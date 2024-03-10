@@ -44,7 +44,7 @@ export const Movie = () => {
     setTimeout(() => {
       setIsLoading(false);
       setTitle("Movie");
-    }, 1500);
+    }, 1000);
   }, [])
 
   return (

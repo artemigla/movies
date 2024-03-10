@@ -27,29 +27,31 @@ export const ShowMovies = () => {
         </SkeletonTheme>
       </div>
       <div className={style.wrapper}>
-        {selector.map(({ id, backdrop_path, title, vote_average }) => (
-          <Link to={`/details/${id}`} key={id} className={style.wrappercarts}>
-            <div className={style.carts}>
-              <SkeletonTheme color="#505050" highlightColor="#999">
-                {!isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt="" />
-                  : <Skeleton duration={2} className={style.imgsceleton} />
-                }
-              </SkeletonTheme>
-              <div className={style.rating} >
+        {selector.map(({ id, backdrop_path, title, vote_average }) => {
+          return (
+            <Link to={`/details/${id}`} key={id} className={style.wrappercarts}>
+              <div className={style.carts}>
                 <SkeletonTheme color="#505050" highlightColor="#999">
-                  {!isLoading ?
-                    <Rating rating={Number(vote_average).toFixed(1)} /> :
-                    <Skeleton duration={2} className={style.skeleton} />}
+                  {!isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt="" />
+                    : <Skeleton duration={2} className={style.imgsceleton} />
+                  }
                 </SkeletonTheme>
-              </div>
-              <SkeletonTheme color="#505050" highlightColor="#999">
+                <div className={style.rating} >
+                  <SkeletonTheme color="#505050" highlightColor="#999">
+                    {!isLoading ?
+                      <Rating rating={Number(vote_average).toFixed(1)} /> :
+                      <Skeleton duration={2} className={style.skeleton} />}
+                  </SkeletonTheme>
+                </div>
+                <SkeletonTheme color="#505050" highlightColor="#999">
                   {!isLoading ?
                     <span className={style.title}>{title}</span> :
                     <Skeleton duration={2} className={style.titleSceleton} />}
                 </SkeletonTheme>
-            </div>
-          </Link>
-        ))}
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

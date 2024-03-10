@@ -14,7 +14,7 @@ export const Tvshowcontent = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false);
-        }, 1500);
+        }, 1000);
     }, [])
 
     useEffect(() => {
