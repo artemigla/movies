@@ -1,8 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { BASE_URL_SEARCH, KEY } from "../../constants/CONSTANTS";
-import { getMoviesApi, setMovies } from "../redux/slices/moviesSlice";
+// import { BASE_URL_SEARCH, KEY } from "../../constants/CONSTANTS";
 import style from './styles.module.scss';
 import { RxAvatar } from 'react-icons/rx';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -10,7 +8,6 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 export const Header = () => {
   const [search, setSearch] = useState('');
-  const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(true);
   const [title, setTitle] = useState("");
 
@@ -25,18 +22,12 @@ export const Header = () => {
     setSearch(event.target.value);
   }
 
-  useEffect(() => {
-    try {
-      dispatch(getMoviesApi())
-    } catch (error) {
-      console.log(error);
-    }
-  }, [dispatch])
+ 
 
   const handlerButton = async () => {
     if (search.length) {
-      const response = await axios.get(`${BASE_URL_SEARCH}${search}&api_key=${KEY}`)
-      dispatch(setMovies(response.data.results))
+      // const response = await axios.get(`${BASE_URL_SEARCH}${search}&api_key=${KEY}`)
+      // dispatch(setMovies(response.data.results))
       setSearch('');
     }
   }

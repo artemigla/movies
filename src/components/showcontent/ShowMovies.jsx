@@ -1,23 +1,54 @@
 import React, { useState, useEffect } from "react";
-import style from './style.module.scss';
 import { Link } from "react-router-dom";
-import { BASE_URL_IMAGES } from "../../constants/CONSTANTS";
+import { BASE_URL_IMAGES, KEY } from "../../constants/CONSTANTS";
 import { Rating } from "../rating/Rating";
-import { useSelector } from "react-redux";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import style from './style.module.scss';
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchDataFromApi } from '../../utils/api';
 
+let filters = {}
 export const ShowMovies = () => {
+  const [data, setData] = useState(null);
+  const [pageNum, setPageNum] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(true);
+  const fetchInitialData = () => {
+    setIsLoading(true);
+    fetchDataFromApi(`/movie/popular?api_key=${KEY}`, filters).then((res) => {
+      setData(res);
+      setPageNum((prev) => prev + 1);
+      setIsLoading(false);
+    });
+  };
 
-  const selector = useSelector(state => state.movies.movies);
-  window.scroll(0, 0);
+  const fetchNextPageData = () => {
+    fetchDataFromApi(`/movie/popular?api_key=${KEY}&page=${pageNum}`, filters)
+      .then((res) => {
+        if (data?.results) {
+          setData({
+            ...data,
+            results: [...data?.results, ...res.results],
+          });
+        } else {
+          setData(res);
+        }
+        setPageNum((prev) => prev + 1);
+      });
+  };
+
+  useEffect(() => {
+    filters = {}
+    setData(null);
+    setPageNum(1);
+    fetchInitialData();
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
-  }, [])
+    }, 500);
+  }, []);
 
   return (
     <div className={style.container}>
@@ -27,31 +58,47 @@ export const ShowMovies = () => {
         </SkeletonTheme>
       </div>
       <div className={style.wrapper}>
-        {selector.map(({ id, backdrop_path, title, vote_average }) => {
-          return (
-            <Link to={`/details/${id}`} key={id} className={style.wrappercarts}>
-              <div className={style.carts}>
-                <SkeletonTheme color="#505050" highlightColor="#999">
-                  {!isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt="" />
-                    : <Skeleton duration={2} className={style.imgsceleton} />
-                  }
-                </SkeletonTheme>
-                <div className={style.rating} >
-                  <SkeletonTheme color="#505050" highlightColor="#999">
-                    {!isLoading ?
-                      <Rating rating={Number(vote_average).toFixed(1)} /> :
-                      <Skeleton duration={2} className={style.skeleton} />}
-                  </SkeletonTheme>
-                </div>
-                <SkeletonTheme color="#505050" highlightColor="#999">
-                  {!isLoading ?
-                    <span className={style.title}>{title}</span> :
-                    <Skeleton duration={2} className={style.titleSceleton} />}
-                </SkeletonTheme>
-              </div>
-            </Link>
-          )
-        })}
+        {!isLoading && (
+          <>
+            {data?.results.length > 0 ? (
+              <InfiniteScroll
+                className={style.wrapperdata}
+                dataLength={data?.results?.length || []}
+                next={fetchNextPageData}
+                hasMore={pageNum <= data?.total_pages}
+              >
+                {data?.results.map(({ id, backdrop_path, title, vote_average }) => {
+                  return (
+                    <Link to={`/details/${id}`} key={id} className={style.wrappercarts}>
+                      <div className={style.carts}>
+                        <SkeletonTheme color="#505050" highlightColor="#999">
+                          {!isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt="" />
+                            : <Skeleton duration={2} className={style.imgsceleton} />
+                          }
+                        </SkeletonTheme>
+                        <div className={style.rating} >
+                          <SkeletonTheme color="#505050" highlightColor="#999">
+                            {!isLoading ?
+                              <Rating rating={Number(vote_average).toFixed(1)} /> :
+                              <Skeleton duration={2} className={style.skeleton} />}
+                          </SkeletonTheme>
+                        </div>
+                        <SkeletonTheme color="#505050" highlightColor="#999">
+                          {!isLoading ?
+                            <span className={style.title}>{title}</span> :
+                            <Skeleton duration={2} className={style.titleSceleton} />}
+                        </SkeletonTheme>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </InfiniteScroll>
+            ) : (
+              <h3>No results</h3>
+            )
+            }
+          </>
+        )}
       </div>
     </div>
   )

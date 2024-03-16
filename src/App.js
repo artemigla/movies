@@ -10,6 +10,7 @@ import { Tvshow } from "./components/tvshow/Tvshow";
 import { Tvshowcontent } from "./components/tvshow/Tvshowcontent";
 
 export const App = () => {
+
   return (
     <div className={style.container}>
       <Header />
@@ -17,9 +18,9 @@ export const App = () => {
         <Route path="/" element={<Movie />} />
         <Route path="details/:ids" element={<Details />} />
         <Route path="showcontent/" element={<ShowMovies />} />
-        <Route path="person/:ids" element={<Person/>}/>
-        <Route path="tvshow/:ids" element={<Tvshow/>}/>
-        <Route path="tvshowcontent/" element={<Tvshowcontent/>}/>
+        <Route path="person/:ids" element={<Person />} />
+        <Route path="tvshow/:ids" element={<Tvshow />} />
+        <Route path="tvshowcontent/" element={<Tvshowcontent />} />
       </Routes>
       <Outlet />
     </div>

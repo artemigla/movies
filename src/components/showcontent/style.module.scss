@@ -18,45 +18,49 @@
         }
     }
     .wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        margin: auto;
-
-        .wrappercarts {
+        .wrapperdata {
+            display: grid;
             position: relative;
-            text-align: center;
-            display: flex;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 210px));
             justify-content: center;
-            grid-template-columns: 1fr 1fr 1fr;
-            margin: 5px;
-            .carts {
+
+            .wrappercarts {
+                position: relative;
+                text-align: center;
                 display: flex;
-                flex-direction: column;
+                justify-content: center;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin: 5px;
 
-                .img {
-                    width: 250px;
-                    height: 270px;
-                    border-radius: 10px;
-                }
+                .carts {
+                    display: flex;
+                    flex-direction: column;
 
-                .title {
-                    color: white;
-                    font-size: 21px;
-                }
-                .titleSceleton {
-                    width: 56%;
-                    font-size: 25px;
-                }
+                    .img {
+                        width: 250px;
+                        height: 270px;
+                        border-radius: 10px;
+                    }
 
-                .rating {
-                    margin-top: -2.5em;
+                    .title {
+                        color: white;
+                        font-size: 21px;
+                    }
+                    .titleSceleton {
+                        width: 56%;
+                        font-size: 25px;
+                    }
 
-                    .skeleton {
+                    .rating {
                         margin-top: -2.5em;
-                        left: -6.5em;
-                        height: 50px;
-                        width: 50px;
-                        border-radius: 50%;
+
+                        .skeleton {
+                            margin-top: -2.5em;
+                            left: -6.5em;
+                            height: 50px;
+                            width: 50px;
+                            border-radius: 50%;
+                        }
                     }
                 }
             }
@@ -126,41 +130,45 @@
 @media screen and (max-width: 360px) {
     .container {
         .wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            font-size: 17px;
-
-            .wrappercarts {
-                .carts {
-                    width: 120px;
-                    display: flex;
-                    align-items: center;
-
-                    .img {
+           display: flex;
+           justify-content: center;
+            width: 100%;
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                font-size: 15px;
+                .wrappercarts {
+                    .carts {
                         width: 120px;
-                        height: 150px;
-                    }
-
-                    .imgsceleton {
-                        width: 120px;
-                        height: 150px;
-                    }
-
-                    .rating {
-                        margin-top: -1.5em;
-                        margin-left: -6.5em;
-                        height: 40px;
-                        width: 40px;
-                        border-radius: 50%;
-
-                        .skeleton {
-                            margin-top: -3.5em;
-                            margin-left: -5em;
+                        display: flex;
+                        align-items: center;
+    
+                        .img {
+                            width: 120px;
+                            height: 150px;
                         }
-                    }
-
-                    .title {
-                        font-size: 14px;
+    
+                        .imgsceleton {
+                            width: 120px;
+                            height: 150px;
+                        }
+    
+                        .rating {
+                            margin-top: -1.5em;
+                            margin-left: -6.5em;
+                            height: 25px;
+                            width: 25px;
+                            border-radius: 50%;
+    
+                            .skeleton {
+                                margin-top: -3.5em;
+                                margin-left: -5em;
+                            }
+                        }
+    
+                        .title {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
