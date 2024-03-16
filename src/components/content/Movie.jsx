@@ -26,9 +26,7 @@ export const Movie = () => {
   const dispatch = useDispatch();
   const selectorShow = useSelector(state => state?.tvshow.tvshow);
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [title, setTitle] = useState("");
-  window.scroll(0, 0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchInitialData = () => {
     setIsLoading(true);
@@ -41,7 +39,7 @@ export const Movie = () => {
 
   useEffect(() => {
     try {
-      dispatch(getTvShow())      
+      dispatch(getTvShow())
     } catch (error) {
       console.log(error)
     }
@@ -49,9 +47,8 @@ export const Movie = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false);
-      setTitle("Movie");
-    }, 500);
+      setIsLoading(true);
+    }, 1500);
     fetchInitialData();
   }, [])
 
@@ -62,7 +59,7 @@ export const Movie = () => {
           {data?.results?.map((item) => (
             <div key={item.id} className={style.wrapperimg}>
               <SkeletonTheme color="#505050" highlightColor="#999">
-                {!isLoading ? <img className={style.img} key={item.id} src={`${BASE_URL_IMAGES}${item?.backdrop_path}`} alt="" />
+                {isLoading ? <img className={style.img} key={item.id} src={`${BASE_URL_IMAGES}${item?.backdrop_path}`} alt="" />
                   : <Skeleton duration={2} className={style.img} />
                 }
               </SkeletonTheme>
@@ -72,42 +69,58 @@ export const Movie = () => {
 
       <div className={style.maincontent}>
         <div className={style.wrapper}>
-          <Link to={'/showcontent/'} className={style.movies}>{!isLoading ? title : <Skeleton duration={2} width={60} className={style.movies} />}</Link>
-          <Slider {...SETTINGS} className={style.slidermovies}>
+          <div className={style.movies}>
+            <Link to={'/showcontent/'}>
+              <SkeletonTheme color="#505050" highlightColor="#999">
+                {isLoading ? "Movies" :
+                  <Skeleton duration={2} width={120} className={style.moviessceleton} />
+                }
+              </SkeletonTheme>
+            </Link>
+          </div>
+          {<Slider {...SETTINGS} className={style.slidermovies}>
             {data?.results?.map((item) => (
               <Link to={`/details/${item.id}`} key={item.id} className={style.imgcontainer}>
                 <SkeletonTheme color="#505050" highlightColor="#999">
-                  {!isLoading ? <img className={style.img} key={item.id} src={`${BASE_URL_IMAGES}${item?.backdrop_path}`} alt="" />
+                  {isLoading ? <img className={style.img} key={item.id} src={`${BASE_URL_IMAGES}${item?.backdrop_path}`} alt="" />
                     : <Skeleton duration={2} className={style.img} />
                   }
                 </SkeletonTheme>
                 <span className={style.average}>
                   <SkeletonTheme color="#505050" highlightColor="#999">
-                    {!isLoading ?
+                    {isLoading ?
                       <Rating rating={Number(item.vote_average).toFixed(1)} /> :
                       <Skeleton duration={2} className={style.skeleton} />}
                   </SkeletonTheme>
                 </span>
               </Link>
             ))}
-          </Slider>
+          </Slider>}
         </div>
       </div>
 
       <div className={style.wrappercontainer}>
-        <Link to={'/tvshowcontent/'} className={style.title}>{!isLoading ? "Tv show" : <Skeleton duration={2} width={60} className={style.title} />}</Link>
+        <div className={style.title}>
+          <Link to={'/tvshowcontent/'} >
+            <SkeletonTheme color="#505050" highlightColor="#999">
+              {isLoading ? "Tv show" :
+                <Skeleton duration={2} width={120} className={style.titlesceleton} />
+              }
+            </SkeletonTheme>
+          </Link>
+        </div>
         <Slider {...SETTINGS} className={style.slider}>
           {selectorShow?.map(({ id, backdrop_path, vote_average }) => (
             <Link to={`/tvshow/${id}`} key={id} className={style.wrapper}>
               <div className={style.imgwrapper}>
                 <SkeletonTheme color="#505050" highlightColor="#999">
-                  {!isLoading ? <img className={style.img} key={id} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt="" />
+                  {isLoading ? <img className={style.img} key={id} src={`${BASE_URL_IMAGES}${backdrop_path}`} alt="" />
                     : <Skeleton duration={2} className={style.img} />
                   }
                 </SkeletonTheme>
                 <span className={style.average}>
                   <SkeletonTheme color="#505050" highlightColor="#999">
-                    {!isLoading ?
+                    {isLoading ?
                       <Rating rating={Number(vote_average).toFixed(1)} /> :
                       <Skeleton duration={2} className={style.skeleton} />}
                   </SkeletonTheme>

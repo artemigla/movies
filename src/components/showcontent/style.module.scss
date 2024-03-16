@@ -21,7 +21,7 @@
         .wrapperdata {
             display: grid;
             position: relative;
-            grid-template-columns: repeat(auto-fill, minmax(210px, 210px));
+            grid-template-columns: repeat(auto-fill, minmax(120px, 210px));
             justify-content: center;
 
             .wrappercarts {
@@ -37,7 +37,13 @@
                     flex-direction: column;
 
                     .img {
-                        width: 250px;
+                        width: 190px;
+                        height: 270px;
+                        border-radius: 10px;
+                    }
+
+                    .imgsceleton {
+                        width: 190px;
                         height: 270px;
                         border-radius: 10px;
                     }
@@ -56,7 +62,7 @@
 
                         .skeleton {
                             margin-top: -2.5em;
-                            left: -6.5em;
+                            left: -4.5em;
                             height: 50px;
                             width: 50px;
                             border-radius: 50%;
@@ -67,22 +73,8 @@
         }
     }
 }
-@media screen and (max-width: 810px) {
-    .container {
-        .wrapper {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-    }
-}
-@media screen and (max-width: 1280px) {
-    .container {
-        .wrapper {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-    }
-}
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1200px) {
     .container {
         overflow-x: hidden;
 
@@ -92,33 +84,165 @@
         }
 
         .wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             position: relative;
-            .wrappercarts {
-                position: relative;
-                .carts {
-                    width: 190px;
 
-                    .img {
-                        width: auto;
-                        height: 200px;
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                font-size: 15px;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+
+                .wrappercarts {
+                    .carts {
+                        align-items: center;
+
+                        .img {
+                            width: 210px;
+                            height: 230px;
+                        }
+
+                        .imgsceleton {
+                            width: 210px;
+                            height: 230px;
+                        }
+
+                        .rating {
+                            margin-right: auto;
+                            width: 45px;
+                            height: 45px;
+
+                            .skeleton {
+                                margin-top: -3.5em;
+                                margin-left: 5em;
+                            }
+                        }
+
+                        .title {
+                            font-size: 21px;
+                            margin-bottom: 12px;
+                        }
+
+                        .titleSceleton {
+                            width: 120px;
+                            margin-bottom: 12px;
+                        }
                     }
+                }
+            }
+        }
+    }
+}
 
-                    .imgsceleton {
-                        width: 170px;
-                        height: 200px;
+@media screen and (max-width: 768px) {
+    .container {
+        overflow-x: hidden;
+
+        .movies {
+            width: 50%;
+            font-size: 28px;
+        }
+
+        .wrapper {
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                font-size: 15px;
+                margin-left: auto;
+                margin-right: auto;
+
+                .wrappercarts {
+                    .carts {
+                        align-items: center;
+
+                        .img {
+                            width: 188px;
+                            height: 180px;
+                        }
+
+                        .imgsceleton {
+                            width: 188px;
+                            height: 180px;
+                        }
+
+                        .rating {
+                            margin-right: auto;
+
+                            .skeleton {
+                                margin-right: auto;
+                                width: 45px;
+                                height: 45px;
+                            }
+                        }
+
+                        .title {
+                            font-size: 17px;
+                            margin-bottom: 12px;
+                        }
+
+                        .titleSceleton {
+                            width: 120px;
+                            margin-bottom: 12px;
+                            height: 20px;
+                        }
                     }
+                }
+            }
+        }
+    }
+}
 
-                    .rating {
-                        margin-top: -1.5em;
+@media screen and (max-width: 420px) {
+    .container {
+        overflow-x: hidden;
 
-                        .skeleton {
-                            margin-top: -2.5em;
-                            margin-left: 3.8em;
-                            height: 40px;
-                            width: 40px;
+        .movies {
+            width: 50%;
+            font-size: 28px;
+        }
+
+        .wrapper {
+            position: relative;
+
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                font-size: 15px;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+
+                .wrappercarts {
+                    .carts {
+                        align-items: center;
+
+                        .img {
+                            width: 188px;
+                            height: 180px;
+                        }
+
+                        .imgsceleton {
+                            width: 188px;
+                            height: 180px;
+                        }
+
+                        .rating {
                             border-radius: 50%;
+                            margin-right: auto;
+
+                            .skeleton {
+                                margin-left: 5em;
+                            }
+                        }
+
+                        .title {
+                            font-size: 16px;
+                        }
+
+                        .titleSceleton {
+                            width: 100px;
+                            height: 14px;
                         }
                     }
                 }
@@ -130,44 +254,44 @@
 @media screen and (max-width: 360px) {
     .container {
         .wrapper {
-           display: flex;
-           justify-content: center;
+            display: flex;
+            justify-content: center;
             width: 100%;
+
             .wrapperdata {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 font-size: 15px;
+
                 .wrappercarts {
                     .carts {
-                        width: 120px;
-                        display: flex;
                         align-items: center;
-    
+
                         .img {
-                            width: 120px;
+                            width: 158px;
                             height: 150px;
                         }
-    
+
                         .imgsceleton {
-                            width: 120px;
+                            width: 158px;
                             height: 150px;
                         }
-    
+
                         .rating {
-                            margin-top: -1.5em;
-                            margin-left: -6.5em;
-                            height: 25px;
-                            width: 25px;
-                            border-radius: 50%;
-    
                             .skeleton {
                                 margin-top: -3.5em;
-                                margin-left: -5em;
+                                margin-right: auto;
+                                width: 35px;
                             }
                         }
-    
+
                         .title {
                             font-size: 14px;
+                        }
+
+                        .titleSceleton {
+                            width: 100px;
+                            height: 14px;
                         }
                     }
                 }

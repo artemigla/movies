@@ -18,7 +18,6 @@
           border-radius: 10px;
           height: 35em;
           width: 100%;
-          border-radius: 10px;
         }
       }
     }
@@ -39,11 +38,20 @@
       margin-right: auto;
 
       .movies {
-        color: #979a9a;
-        font-size: 21px;
-        background-color: #e3e4e8;
-        border-radius: 3px;
-        padding: 3px;
+        font-weight: bold;
+        height: 30px;
+        width: 120px;
+        text-align: center;
+        font-size: 25px;
+        background: linear-gradient(rgba(250, 113, 0, 1) 0%, rgba(255, 239, 0, 1) 100%);
+        border-radius: 10px;
+      }
+
+      .moviessceleton {
+        display: flex;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        height: 30px;
       }
 
       .slidermovies {
@@ -86,19 +94,28 @@
     margin-right: auto;
 
     .title {
-      font-size: 21px;
-      color: #979a9a;
-      padding: 3px;
-      border-radius: 3px;
-      background-color: #e3e4e8;
+      font-weight: bold;
+      font-size: 25px;
+      text-align: center;
+      width: 120px;
+      height: 30px;
+      background: linear-gradient(rgba(250, 113, 0, 1) 0%, rgba(255, 239, 0, 1) 100%);
+      border-radius: 10px;
       margin-left: 2%;
+    }
+
+    .titlesceleton {
+      display: flex;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      height: 30px;
     }
 
     .slider {
       width: 96%;
       margin-left: auto;
       margin-right: auto;
-      
+
       .wrapper {
         border-radius: 10px;
         width: 96%;
@@ -111,6 +128,7 @@
           flex-direction: column;
           padding-top: 12px;
           height: 25vh;
+
           .skeleton {
             height: 50px;
             width: 50px;
@@ -140,13 +158,13 @@
     margin-top: 3%;
     position: relative;
 
-    .wrapperslider{
+    .wrapperslider {
       height: 300px;
 
       .slider {
         margin: auto;
         width: 95%;
-  
+
         .wrapperimg {
           .img {
             display: flex;
@@ -161,10 +179,8 @@
       width: 90%;
     }
 
-    .wrappercontainer{
+    .wrappercontainer {
       width: 90%;
     }
   }
-
-  
 }
