@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BASE_URL_IMAGES, KEY } from '../../constants/CONSTANTS';
+import { BASE_URL_IMAGES, KEY } from '../../../constants/CONSTANTS';
 import { Link } from 'react-router-dom';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import style from './style.module.scss';
-import { fetchDataFromApi } from '../../utils/api';
+import { fetchDataFromApi } from '../../../utils/api';
 
 export const Tvshowcontent = () => {
     const [data, setData] = useState(null);
@@ -58,7 +58,6 @@ export const Tvshowcontent = () => {
                             next={fetchNextPageData}
                             hasMore={pageNum <= data?.total_pages}
                         >
-
                             {data?.results?.map((item) => (
                                 <Link to={`/tvshow/${item.id}`} key={item.id} className={style.wrapper}>
                                     <div className={style.wrapperimg}>

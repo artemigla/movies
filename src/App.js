@@ -5,8 +5,8 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import { Details } from "./pages/details/Details";
 import { ShowMovies } from "./components/showcontent/ShowMovies";
 import { Person } from "./pages/person/Person";
-// import { Tvshow } from "./components/tvshow/Tvshow";
-import { Tvshowcontent } from "./components/tvshow/Tvshowcontent";
+import { Tvshow } from "./components/tvshow/Tvshow";
+import { Tvshowcontent } from "./components/tvshow/listtv/AllListTV";
 import { fetchDataFromApi } from './utils/api';
 import { useDispatch } from 'react-redux';
 import { getApiConfiguration } from "./components/redux/slices/mainSlice";
@@ -38,7 +38,7 @@ export const App = () => {
         <Route path="details/:ids" element={<Details />} />
         <Route path="showcontent/" element={<ShowMovies />} />
         <Route path="person/:ids" element={<Person />} />
-        {/* <Route path="tvshow/:ids" element={<Tvshow />} /> */}
+        <Route path="tvshow/:ids" element={<Tvshow />} />
         <Route path="tvshowcontent/" element={<Tvshowcontent />} />
       </Routes>
       <Outlet />
