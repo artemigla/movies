@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
 import { BASE_URL_IMAGES, SETTINGS, KEY } from "../../constants/CONSTANTS.js";
 import { Rating } from "../rating/Rating.jsx";
 import { Link } from "react-router-dom";
-import { getTvShow } from "../redux/slices/tvSlice.js";
+// import { getTvShow } from "../redux/slices/tvSlice.js";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { fetchDataFromApi } from '../../utils/api';
 import style from './style.module.scss';
@@ -23,9 +22,9 @@ const settings = {
 }
 
 export const Movie = () => {
-  const dispatch = useDispatch();
-  const selectorShow = useSelector(state => state?.tvshow.tvshow);
+  // const selectorShow = useSelector(state => state?.tvshow.tvshow);
   const [data, setData] = useState(null);
+  const [dataShow, setDataShow] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchInitialData = () => {
@@ -37,19 +36,21 @@ export const Movie = () => {
       });
   };
 
-  useEffect(() => {
-    try {
-      dispatch(getTvShow())
-    } catch (error) {
-      console.log(error)
-    }
-  }, [dispatch])
+  const fetchInitialDataShow = () => {
+    setIsLoading(true);
+    fetchDataFromApi(`/discover/tv?api_key=${KEY}`)
+      .then((res) => {
+        setDataShow(res);
+        setIsLoading(false);
+      });
+  };
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
     }, 1500);
     fetchInitialData();
+    fetchInitialDataShow();
   }, [])
 
   return (
@@ -110,7 +111,7 @@ export const Movie = () => {
           </Link>
         </div>
         <Slider {...SETTINGS} className={style.slider}>
-          {selectorShow?.map(({ id, backdrop_path, vote_average }) => (
+          {dataShow?.results.map(({ id, backdrop_path, vote_average }) => (
             <Link to={`/tvshow/${id}`} key={id} className={style.wrapper}>
               <div className={style.imgwrapper}>
                 <SkeletonTheme color="#505050" highlightColor="#999">

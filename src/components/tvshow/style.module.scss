@@ -1,97 +1,45 @@
-.container {
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    width: 100%;
-
-    .wrapper {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: row;
-
-        .wrapperimg {
-            display: flex;
-            flex-direction: column;
-            height: 50em;
-            width: 35%;
-
-            .average {
-                position: relative;
-                top: -2.5em;
-                border-radius: 50%;
-            }
-            .img {
-                object-fit: fill;
-                width: 400px;
-
-                border-radius: 10px;
-            }
-
-            .title {
-                color: white;
-                text-align: center;
-                font-size: 25px;
-                margin-top: -1em;
-                width: 90%;
-            }
-        }
-
-        .content {
-            margin-top: 3%;
-            width: 60%;
-            padding: 5px 0 5px 0;
-
-            .content,
-            i,
-            p,
-            span {
-                color: white;
-                font-size: 17px;
-                font-weight: bold;
-            }
-        }
-    }
-}
-
 .containertv {
-    width: 100%;
+    width: 95%;
+    margin: auto;
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    position: relative;
-    gap: 20px;
+    
+    .wrapperdata {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        width: 100%;
+        column-gap: 20px;
+        row-gap: 20px;
 
-    .wrapper {
-        display: flex;
-        width: 99%;
-        align-items: center;
-        justify-content: center;
-
-        .wrapperimg {
-            box-shadow: 0px 0px 10px 7px rgba(71, 123, 255, 0.78);
-            border-radius: 10px;
-
-            .img {
-                display: flex;
-                width: 210px;
-                height: 170px;
+        .wrapper {
+            .wrapperimg {
+                box-shadow: 0px 0px 10px 7px rgba(71, 123, 255, 0.78);
                 border-radius: 10px;
-                margin-left: auto;
-                margin-right: auto;
-            }
+                display: flex;
+                flex-direction: column;
+                height: 230px;
+                margin: 10px;
 
-            .title {
-                font-size: 17px;
-                color: white;
-                text-align: center;
-                white-space: wrap;
-            }
+                .img {
+                    display: flex;
+                    width: 200px;
+                    height: 170px;
+                    justify-content: center;
+                    border-radius: 10px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
 
-            .titleSceleton {
-                font-size: 17px;
-                height: 35px;
+                .title {
+                    font-size: 17px;
+                    color: white;
+                    text-align: center;
+                    white-space: wrap;
+                }
+
+                .titleSceleton {
+                    font-size: 17px;
+                    height: 35px;
+                }
             }
         }
     }

@@ -5,7 +5,7 @@ import detailSlice from "../slices/detailSlice";
 import recommendationsSlice from "../slices/recommendationsSlice";
 import reviewsSlice from "../slices/reviewsSlice";
 import videoSlice from "../slices/videoSlice";
-import tvSlice from "../slices/tvSlice";
+// import tvSlice from "../slices/tvSlice";
 import genresSlice from "../slices/genresSlice";
 import personSlice from "../slices/personSlice";
 import detailtvSlice from "../slices/detailtvSlice";
@@ -19,7 +19,7 @@ export const store = configureStore({
     reviews: reviewsSlice,
     actors: actorsSlice,
     recommendations: recommendationsSlice,
-    tvshow: tvSlice,
+    // tvshow: tvSlice,
     genres: genresSlice,
     person: personSlice,
     detailtv: detailtvSlice

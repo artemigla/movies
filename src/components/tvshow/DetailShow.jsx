@@ -6,7 +6,7 @@ import { Rating } from '../rating/Rating';
 export const DetailShow = ({ backdrop_path, first_air_date, last_air_date, vote_average, name, origin_country, overview }) => {
 
     window.scroll(0, 0);
-
+    console.log('DetailShow ');
     return (
         <div className={style.wrapper}>
             <div className={style.wrapperimg}>

@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    url: []
+    url: {}
 }
 
 export const mainSlice = createSlice({
     name: 'main',
     initialState,
     reducers: {
-        getMovies: (state, { payload }) => {
+        getApiConfiguration: (state, { payload }) => {
             state.url = payload;
         }
     }
 });
 
-export const { getMovies } = mainSlice.actions;
+export const { getApiConfiguration } = mainSlice.actions;
 export default mainSlice.reducer;

@@ -65,7 +65,7 @@ export const ShowMovies = () => {
                 next={fetchNextPageData}
                 hasMore={pageNum <= data?.total_pages}
               >
-                {data?.results.map(({ id, backdrop_path, title, vote_average }) => {
+                {data?.results?.map(({ id, backdrop_path, title, vote_average }) => {
                   return (
                     <Link to={`/details/${id}`} key={id} className={style.wrappercarts}>
                       <div className={style.carts}>
