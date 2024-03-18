@@ -27,31 +27,18 @@
     display: flex;
     position: relative;
     height: 30px;
+    margin: auto;
 
     .skeleton {
       transition: transform 0.2s;
       position: relative;
       overflow: hidden;
-      width: 410px;
-      height: 29px;
-      border-radius: 15px;
+      width: 320px;
+      height: 30px;
+      border-radius: 3px;
       border: none;
     }
 
-    .clicksearch {
-      position: relative;
-      width: 100px;
-      cursor: pointer;
-      border-radius: 0 15px 15px 0;
-      background: rgb(214, 80, 80);
-      background: linear-gradient(
-        142deg,
-        rgba(214, 80, 80, 1) 0%,
-        rgba(213, 137, 53, 1) 30%,
-        rgba(199, 145, 67, 1) 70%,
-        rgba(232, 79, 0, 1) 100%
-      );
-    }
     padding: 0px 12px 2px 12px;
     height: 30px;
 
@@ -60,14 +47,7 @@
       font-size: 150%;
       border: none;
       padding: 0 0 0 12px;
-      border-radius: 15px 0 0 15px;
-    }
-
-    .icon {
-      width: 30px;
-      height: 30px;
-      fill: #fff;
-      margin-left: 60px;
+      border-radius: 3px;
     }
   }
 
@@ -94,22 +74,9 @@
         font-size: 100%;
         margin-right: auto;
 
-        .clicksearch {
-          width: 30%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-
-          .icon {
-            margin-right: auto;
-            margin-left: auto;
-          }
-        }
-
         input {
           outline: none;
-          border-radius: 15px 0 0 15px;
+          border-radius: 3px;
           width: 100%;
           border: none;
           margin-left: -12px;
@@ -141,19 +108,6 @@
         font-size: 70%;
         position: relative;
 
-        .clicksearch {
-          position: relative;
-          display: flex;
-          height: 90%;
-          margin: auto;
-
-          .icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-
         .skeleton {
           border: none;
           width: 50vw;
@@ -174,7 +128,7 @@
       input {
         outline: none;
         margin: auto;
-        border-radius: 15px 0 0 15px;
+        border-radius: 3px;
         height: 90%;
         border: none;
         margin-left: -12px;

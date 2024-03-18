@@ -8,6 +8,7 @@ import { Person } from "./pages/person/Person";
 import { Tvshow } from "./components/tvshow/Tvshow";
 import { Tvshowcontent } from "./components/tvshow/listtv/AllListTV";
 import style from './style.module.scss';
+import { Search } from "./components/search/Search";
 
 export const App = () => {
 
@@ -16,6 +17,7 @@ export const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Movie />} />
+        <Route path="search/:query" element={<Search />}/>
         <Route path="details/:ids" element={<Details />} />
         <Route path="showcontent/" element={<ShowMovies />} />
         <Route path="person/:ids" element={<Person />} />

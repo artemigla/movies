@@ -4,8 +4,8 @@ import { BASE_URL_IMAGES, SETTINGS, KEY } from "../../constants/CONSTANTS.js";
 import { Rating } from "../rating/Rating.jsx";
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { fetchDataFromApi } from '../../utils/api';
 import style from './style.module.scss';
+import { useFetch } from "../../hooks/useFetch.jsx";
 
 const settings = {
   dots: false,
@@ -21,34 +21,14 @@ const settings = {
 }
 
 export const Movie = () => {
-  const [data, setData] = useState(null);
-  const [dataShow, setDataShow] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  const fetchInitialData = () => {
-    setIsLoading(true);
-    fetchDataFromApi(`/movie/popular?api_key=${KEY}`)
-      .then((res) => {
-        setData(res);
-        setIsLoading(false);
-      });
-  };
-
-  const fetchInitialDataShow = () => {
-    setIsLoading(true);
-    fetchDataFromApi(`/discover/tv?api_key=${KEY}`)
-      .then((res) => {
-        setDataShow(res);
-        setIsLoading(false);
-      });
-  };
-
+  const { data } = useFetch(`/movie/popular?api_key=${KEY}`)
+  const { data: results } = useFetch(`/discover/tv?api_key=${KEY}`);
+  
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
     }, 1500);
-    fetchInitialData();
-    fetchInitialDataShow();
   }, [])
 
   return (
@@ -65,7 +45,6 @@ export const Movie = () => {
             </div>))}
         </Slider>
       </div>
-
       <div className={style.maincontent}>
         <div className={style.wrapper}>
           <div className={style.movies}>
@@ -97,7 +76,6 @@ export const Movie = () => {
           </Slider>}
         </div>
       </div>
-
       <div className={style.wrappercontainer}>
         <div className={style.title}>
           <Link to={'/tvshowcontent/'} >
@@ -109,7 +87,7 @@ export const Movie = () => {
           </Link>
         </div>
         <Slider {...SETTINGS} className={style.slider}>
-          {dataShow?.results.map(({ id, backdrop_path, vote_average }) => (
+          {results?.results?.map(({ id, backdrop_path, vote_average }) => (
             <Link to={`/tvshow/${id}`} key={id} className={style.wrapper}>
               <div className={style.imgwrapper}>
                 <SkeletonTheme color="#505050" highlightColor="#999">

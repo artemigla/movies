@@ -11,7 +11,7 @@ export const ShowMovies = () => {
   const [data, setData] = useState(null);
   const [pageNum, setPageNum] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-
+  
   const fetchInitialData = () => {
     setIsLoading(true);
     fetchDataFromApi(`/movie/popular?api_key=${KEY}`).then((res) => {
@@ -24,7 +24,7 @@ export const ShowMovies = () => {
   const fetchNextPageData = () => {
     fetchDataFromApi(`/movie/popular?api_key=${KEY}&page=${pageNum}`)
       .then((res) => {
-        if (data?.results) {
+        if (data?.results) {  
           setData({
             ...data,
             results: [...data?.results, ...res.results],
@@ -35,12 +35,12 @@ export const ShowMovies = () => {
         setPageNum((prev) => prev + 1);
       });
   };
-  
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
-    }, 1500);
-  }, []);
+    }, 1500)
+  }, [])
 
   useEffect(() => {
     setData(null);
