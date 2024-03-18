@@ -1,27 +1,52 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getPersonApi } from '../../components/redux/slices/personSlice';
-import { ShowPerson } from './ShowPerson';
+import { BASE_URL_IMAGES, KEY } from '../../constants/CONSTANTS';
+import { useFetch } from '../../hooks/useFetch';
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import style from './style.module.scss';
 
 export const Person = () => {
-    const {ids} = useParams();
-    const selector = useSelector(state => state.person.person);
-    const dispatch = useDispatch();
-    
+    window.scroll(0, 0);
+    const { ids } = useParams();
+    const { data } = useFetch(`/person/${ids}?api_key=${KEY}`);
+    const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
-        try {
-            dispatch(getPersonApi(ids))
-            window.scroll(0, 0)
-        } catch (error) {
-            console.log(error);
-        }
-    }, [dispatch, ids])
+        setTimeout(() => {
+            setIsLoading(true);
+        }, 1500)
+    }, [isLoading])
 
     return (
         <div className={style.container}>
-            <ShowPerson {...selector}/>
+            <div className={style.wrapper}>
+                <div className={style.content}>
+                    <SkeletonTheme color="#505050" highlightColor="#999">
+                        {isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}` + data?.profile_path} alt={data?.name} /> :
+                            <Skeleton duration={2} className={style.img} />}
+                    </SkeletonTheme>
+                    <div className={style.biography}>
+                        <SkeletonTheme color="#505050" highlightColor="#999">
+                            {isLoading ? <span className={style.title}>{data?.name}</span> : <Skeleton duration={2} className={style.title} />}
+                            {isLoading ? <div className={style.titlebiography}>
+                                <span>Biography</span>
+                            </div> : <Skeleton duration={2} className={style.titlebiography} />}
+                            {isLoading ? <p>{data?.biography}</p> : <Skeleton duration={2} />}
+                        </SkeletonTheme>
+                        <SkeletonTheme color="#505050" highlightColor="#999">
+                            <div className={style.department}>
+                                {isLoading ? <span>{data?.known_for_department}</span> : <Skeleton duration={2} />}
+                            </div>
+                            <div className={style.placeofbirth}>
+                                {isLoading ? <h4>Place of birth</h4> : <Skeleton duration={2} />}
+                                {isLoading ? <span>{data?.place_of_birth} </span> : <Skeleton duration={2} />}
+                                {isLoading ? <p>{data?.birthday}</p> : <Skeleton duration={2} />}
+                            </div>
+                        </SkeletonTheme>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 }

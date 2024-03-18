@@ -1,10 +1,14 @@
 .container {
   margin-top: 12%;
-  width: 90%;
+  width: 100%;
 
   .actors {
     color: white;
     margin: 3px 0px 3px 0px;
+
+    .titleskeleton {
+      width: 50px;
+    }
   }
 
   .slider {
@@ -14,6 +18,15 @@
     .wrapper {
       .img {
         border-radius: 10px;
+      }
+
+      .sceletonimg {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        height: 120px;
+        width: 100px;
       }
 
       .noimg {

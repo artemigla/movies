@@ -1,34 +1,44 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { KEY } from '../../constants/CONSTANTS';
-import style from './style.module.scss';
+import React, { useEffect, useState } from 'react';
+import { KEY, BASE_URL_IMAGES } from '../../constants/CONSTANTS';
 import { useParams } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 import { Rating } from '../rating/Rating';
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import style from './style.module.scss';
 
 export const Tvshow = () => {
-
     const { ids } = useParams();
     const { data } = useFetch(`/tv/${ids}?api_key=${KEY}`);
-    const { url } = useSelector((state) => state?.main);
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(true)
+        }, 1500)
+    }, [])
 
     return (
         <div className={style.container}>
-            <div className={style.wrapper}>
-                <img className={style.img ? style.img : null} src={url?.backdrop + data?.backdrop_path} alt={data?.backdrop_path} />
-                <span className={style.average}>
-                    <Rating rating={Number(data?.vote_average).toFixed(1)} />
-                </span>
-                <span className={style.title}>{data?.name} {"(" + data?.first_air_date + ")"}</span>
-            </div>
-            <div className={style.description}>
-                {data?.overview?.length ?
-                    <div className={style.overview}><i>{data?.overview}</i></div> :
-                    (
-                        <div className={style.nooverview}><h3>No Overview</h3></div>
-                    )}
-                <p className={style.country}>Country: {data?.origin_country}</p>
-            </div>
+            <SkeletonTheme color="#505050" highlightColor="#999">
+                <div className={style.wrapper}>
+                    {isLoading ?
+                        <img className={style.img ? style.img : null} src={BASE_URL_IMAGES + data?.backdrop_path} alt={data?.backdrop_path} />
+                        : <Skeleton duration={2} className={style.img} />
+                    }
+                    <span className={style.average}>
+                        {isLoading ? <Rating rating={Number(data?.vote_average).toFixed(1)} /> : <Skeleton duration={2} className={style.skeletonaverage} />}
+                    </span>
+                    {isLoading ? <span className={style.title}>{data?.name} {"(" + data?.first_air_date + ")"}</span> : <Skeleton duration={2} />}
+                </div>
+                <div className={style.description}>
+                    {data?.overview?.length ?
+                        <div className={style.overview}>{isLoading ? <i>{data?.overview}</i> : <Skeleton duration={2} />}</div> :
+                        (
+                            <div className={style.nooverview}>{isLoading ? <h3>No Overview</h3> : <Skeleton duration={2} />}</div>
+                        )}
+                    {isLoading ? <p className={style.country}>Country: {data?.origin_country}</p> : <Skeleton duration={2} />}
+                </div>
+            </SkeletonTheme>
         </div>
     );
 }

@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import dayjs from "dayjs";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { KEY } from '../../constants/CONSTANTS.js';
+import { KEY, BASE_URL_IMAGES } from '../../constants/CONSTANTS.js';
 import { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch.jsx';
 import { Rating } from '../../components/rating/Rating';
 import { VideoPlayer } from '../video/VideoPlayer';
-import { Actors } from '../actors/Actors';
+import { Cast } from '../actors/Cast.jsx';
 import { Recommendations } from '../recommendations/Recommendations';
 import { Comments } from './Comments';
 import style from './style.module.scss';
@@ -16,14 +15,13 @@ import style from './style.module.scss';
 export const Details = () => {
   const { ids } = useParams();
   const { data } = useFetch(`/movie/${ids}?api_key=${KEY}`);
-  const { url } = useSelector((state) => state?.main);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
     }, 1500);
-  }, []);
+  }, [isLoading]);
 
   return (
     <div className={style.container}>
@@ -32,7 +30,7 @@ export const Details = () => {
           {(
             <div>
               <SkeletonTheme color="#505050" highlightColor="#999">
-                {isLoading ? <img className={style.img} src={url?.backdrop + data?.backdrop_path} alt={data?.backdrop_path} /> :
+                {isLoading ? <img className={style.img} src={BASE_URL_IMAGES + data?.backdrop_path} alt={data?.original_title} /> :
                   <Skeleton duration={2} className={style.img} />
                 }
               </SkeletonTheme>
@@ -86,7 +84,7 @@ export const Details = () => {
           </div>
         </div>
         <div className={style.titleRecommendation}>
-          <Actors id={data?.id} />
+          <Cast />
         </div>
         <div className={style.titleRecommendation}>
           <Recommendations />

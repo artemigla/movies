@@ -22,8 +22,6 @@ export const Header = () => {
     setSearch(event.target.value);
   }
 
- 
-
   const handlerButton = async () => {
     if (search.length) {
       // const response = await axios.get(`${BASE_URL_SEARCH}${search}&api_key=${KEY}`)

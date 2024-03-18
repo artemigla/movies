@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Header } from "./components/header/Header";
 import { Movie } from "./components/content/Movie";
 import { Outlet, Route, Routes } from "react-router-dom";
@@ -7,28 +7,9 @@ import { ShowMovies } from "./components/showcontent/ShowMovies";
 import { Person } from "./pages/person/Person";
 import { Tvshow } from "./components/tvshow/Tvshow";
 import { Tvshowcontent } from "./components/tvshow/listtv/AllListTV";
-import { fetchDataFromApi } from './utils/api';
-import { useDispatch } from 'react-redux';
-import { getApiConfiguration } from "./components/redux/slices/mainSlice";
 import style from './style.module.scss';
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const fetchApiConfig = () => {
-    fetchDataFromApi("/configuration")
-      .then((res) => {
-        const url = {
-          backdrop: res?.images.secure_base_url + "original",
-          poster: res?.images.secure_base_url + "original",
-          profile: res?.images.secure_base_url + "original",
-        };
-        dispatch(getApiConfiguration(url));
-      });
-  };
-
-  useEffect(() => {
-    fetchApiConfig();
-  });
 
   return (
     <div className={style.container}>

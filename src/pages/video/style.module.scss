@@ -1,31 +1,33 @@
-.container{
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+
+  .buttonWrapper {
+    position: absolute;
+    margin-top: 50px;
+  }
+
+  .youtubeWrapper {
     display: flex;
-    position: relative;
-    flex-direction: row;
-    
-    .buttonWrapper{
-      position: absolute;
-      margin-top: 50px;
-    }
-    
-    .youtubeWrapper {
-      display: flex;
-      position: absolute;
-      margin-left: 10%;
-      
-      .youtube{
+
+    .youtube {
       position: relative;
       margin-left: auto;
       margin-right: auto;
     }
-
-    }
-    .button{
-      margin: 50px;
-      padding: 10px 40px 10px 40px;
-      border: none;
-      border-radius: 3px;
-      background: linear-gradient(180deg, rgba(204,204,204,1) 0%, rgba(255,255,255,1) 50%, rgba(204,204,204,1) 100%);
-      cursor: pointer;
-    }
   }
+  .button {
+    margin: 50px;
+    padding: 10px 40px 10px 40px;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(
+      180deg,
+      rgba(204, 204, 204, 1) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(204, 204, 204, 1) 100%
+    );
+    cursor: pointer;
+  }
+}

@@ -7,7 +7,6 @@ import style from './style.module.scss';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchDataFromApi } from '../../utils/api';
 
-let filters = {}
 export const ShowMovies = () => {
   const [data, setData] = useState(null);
   const [pageNum, setPageNum] = useState(1);
@@ -15,7 +14,7 @@ export const ShowMovies = () => {
 
   const fetchInitialData = () => {
     setIsLoading(true);
-    fetchDataFromApi(`/movie/popular?api_key=${KEY}`, filters).then((res) => {
+    fetchDataFromApi(`/movie/popular?api_key=${KEY}`).then((res) => {
       setData(res);
       setPageNum((prev) => prev + 1);
       setIsLoading(false);
@@ -23,7 +22,7 @@ export const ShowMovies = () => {
   };
 
   const fetchNextPageData = () => {
-    fetchDataFromApi(`/movie/popular?api_key=${KEY}&page=${pageNum}`, filters)
+    fetchDataFromApi(`/movie/popular?api_key=${KEY}&page=${pageNum}`)
       .then((res) => {
         if (data?.results) {
           setData({
@@ -44,7 +43,6 @@ export const ShowMovies = () => {
   }, []);
 
   useEffect(() => {
-    filters = {}
     setData(null);
     setPageNum(1);
     fetchInitialData();

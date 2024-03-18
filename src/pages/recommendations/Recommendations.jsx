@@ -1,36 +1,58 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getRecommendationsMovies } from "../../components/redux/slices/recommendationsSlice";
-import { BASE_URL_IMAGES } from "../../constants/CONSTANTS";
-import style from './style.module.scss';
+import { BASE_URL_IMAGES, KEY } from "../../constants/CONSTANTS";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { SETTINGS } from "../../constants/CONSTANTS";
+import { fetchDataFromApi } from '../../utils/api';
+import style from './style.module.scss';
 
 export const Recommendations = () => {
   const { ids } = useParams();
-  const dispatch = useDispatch();
-  const selector = useSelector(state => state.recommendations.recommendations);
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchInitialData = () => {
+    setIsLoading(true);
+    fetchDataFromApi(`/movie/${ids}/recommendations?api_key=${KEY}`)
+      .then((res) => {
+        setData(res);
+        setIsLoading(false);
+      });
+  };
 
   useEffect(() => {
-    dispatch(getRecommendationsMovies(ids))
-  }, [dispatch, ids])
+    setTimeout(() => {
+      setIsLoading(true);
+    }, 1500);
+  }, [isLoading]);
+
+  useEffect(() => {
+    setData(null);
+    fetchInitialData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={style.container}>
-      {selector.length ? <div className={style.titleRecommendation}>
-        <h2>Recommendation</h2>
+      {data?.results.length ? <div className={style.titleRecommendation}>
+        <SkeletonTheme color="#505050" highlightColor="#999">
+          {isLoading ? <h2>Recommendation</h2> : <Skeleton duration={2} className={style.titleRecommendation} />}
+        </SkeletonTheme>
       </div> : null}
       <Slider {...SETTINGS} className={style.slider} >
-        {selector.map((item) => (
+        {data?.results?.map((item) => (
           <div className={style.wrapper} key={item.id}>
-            <img className={style.img ? style.noimg : style.img} src={`${BASE_URL_IMAGES}${item.poster_path}`} alt="" />
-            <p className={style.title}>{item.title}</p>
+            <SkeletonTheme color="#505050" highlightColor="#999">
+              {isLoading ? <img className={style.img ? style.noimg : style.img} src={`${BASE_URL_IMAGES}${item.poster_path}`} alt="" />
+                : <Skeleton duration={2} className={style.img} />}
+              {isLoading ? <p className={style.title}>{item.title}</p> : <Skeleton duration={2} className={style.title} />}
+            </SkeletonTheme>
           </div>
         ))}
       </Slider>
-    </div >
+    </div>
   )
 }

@@ -1,32 +1,40 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getReviewsToMovies } from "../../components/redux/slices/reviewsSlice";
+import { KEY } from "../../constants/CONSTANTS";
+import { useFetch } from '../../hooks/useFetch';
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import style from './style.module.scss';
 
 export const Comments = () => {
   const { ids } = useParams();
-
-  const dispatch = useDispatch();
-  const selector = useSelector(state => state.reviews.reviews);
+  const { data } = useFetch(`/movie/${ids}/reviews?api_key=${KEY}`);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    dispatch(getReviewsToMovies(ids))
-  }, [dispatch, ids])
+    setTimeout(() => {
+      setIsLoading(true)
+    }, 1500)
+  }, [isLoading])
 
   return (
     <div className={style.reviews}>
-      <div className={style.reviewsTitle}>Comments ({selector.length})</div>
-      {selector.length ? selector?.map((item) => (
+      <SkeletonTheme color="#505050" highlightColor="#999">
+        {isLoading ? <div className={style.reviewsTitle}>Comments ({data?.results?.length})</div> : <Skeleton duration={2} className={style.reviewsTitle} />}
+      </SkeletonTheme>
+      {data?.results?.length ? data?.results?.map((item) => (
         <div key={item.id}>
           <details className={style.detailsReviews}>
-            <summary>
-              <b className={style.author}>{item.author}</b>
-            </summary>
+            <SkeletonTheme color="#505050" highlightColor="#999">
+              <summary>
+                {isLoading ? <b className={style.author}>{item.author}</b> : <Skeleton duration={2} className={style.author} />}
+              </summary>
+            </SkeletonTheme>
             <i className={style.content}>{item.content}</i>
           </details>
         </div>
-      )) : <h3 style={{ color: "white" }}>There are no comments </h3>}
+      )) : <SkeletonTheme color="#505050" highlightColor="#999">
+        {isLoading ? <h3 style={{ color: "white" }}>There are no comments </h3> : <Skeleton duration={2} style={{ width: "250px" }} />}
+      </SkeletonTheme>}
     </div>
   )
 }

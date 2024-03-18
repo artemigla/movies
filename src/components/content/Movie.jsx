@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import { BASE_URL_IMAGES, SETTINGS, KEY } from "../../constants/CONSTANTS.js";
 import { Rating } from "../rating/Rating.jsx";
 import { Link } from "react-router-dom";
-// import { getTvShow } from "../redux/slices/tvSlice.js";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { fetchDataFromApi } from '../../utils/api';
 import style from './style.module.scss';
@@ -22,7 +21,6 @@ const settings = {
 }
 
 export const Movie = () => {
-  // const selectorShow = useSelector(state => state?.tvshow.tvshow);
   const [data, setData] = useState(null);
   const [dataShow, setDataShow] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

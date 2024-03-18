@@ -6,8 +6,8 @@ import { getVideoThunk } from '../../components/redux/slices/videoSlice';
 import style from './style.module.scss';
 
 const opts = {
-  // height: '420',
-  // width: '768',
+  height: '420',
+  width: '768',
   playerVars: {
     autoplay: 0,
   },
@@ -37,5 +37,4 @@ export const VideoPlayer = () => {
       </div>
     </div>
   )
-
 }
