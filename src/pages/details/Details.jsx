@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import dayjs from "dayjs";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { KEY, BASE_URL_IMAGES } from '../../constants/CONSTANTS.js';
+import { KEY } from '../../constants/CONSTANTS.js';
 import { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch.jsx';
 import { Rating } from '../../components/rating/Rating';
@@ -10,12 +10,19 @@ import { VideoPlayer } from '../video/VideoPlayer';
 import { Cast } from '../actors/Cast.jsx';
 import { Recommendations } from '../recommendations/Recommendations';
 import { Comments } from './Comments';
+import NoPoster from '../../assets/noposter.jpg';
 import style from './style.module.scss';
+import { useSelector } from 'react-redux';
 
 export const Details = () => {
   const { ids } = useParams();
   const { data } = useFetch(`/movie/${ids}?api_key=${KEY}`);
   const [isLoading, setIsLoading] = useState(false);
+  const { url } = useSelector(state => state?.main);
+
+  const posterUrl = data?.poster_path
+    ? url?.poster + data?.poster_path
+    : NoPoster;
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,7 +37,7 @@ export const Details = () => {
           {(
             <div>
               <SkeletonTheme color="#505050" highlightColor="#999">
-                {isLoading ? <img className={style.img} src={BASE_URL_IMAGES + data?.backdrop_path} alt={data?.original_title} /> :
+                {isLoading ? <img className={style.img} src={posterUrl} alt={data?.original_title} /> :
                   <Skeleton duration={2} className={style.img} />
                 }
               </SkeletonTheme>

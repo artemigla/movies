@@ -5,8 +5,10 @@ import { fetchDataFromApi } from '../../utils/api';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { ShowCarts } from '../showcarts/ShowCarts';
 import { KEY } from '../../constants/CONSTANTS';
+import style from './style.module.scss';
 
 export const Search = () => {
+
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
@@ -50,18 +52,28 @@ export const Search = () => {
     }, [query]);
 
     return (
-        <InfiniteScroll
-            dataLength={data?.results?.length > 0 || []}
-            next={fetchNextPageData}
-            hasMore={pageNum <= data?.total_pages}
-        >
-            {!isLoading && data?.results?.map((item, index) => (
-                <ShowCarts
-                    key={index}
-                    fromSearch={true}
-                    data={item}
-                />
-            ))}
-        </InfiniteScroll>
+        <div className={style.container}>
+            <div className={style.titlequery}>
+                {`Search ${data?.total_results > 1
+                    ? "results"
+                    : "result"
+                    } of '${query}'`}
+            </div>
+            <InfiniteScroll
+                className={style.wrapperdata}
+                dataLength={data?.results?.length > 0 || []}
+                next={fetchNextPageData}
+                hasMore={pageNum <= data?.total_pages}
+            >
+                {!isLoading && data?.results?.length ? (
+                    <>
+                        {data?.results?.map((item, index) => {
+
+                            return <ShowCarts key={index} data={item} />
+                        })}
+                    </>
+                ) : (<div>No Results</div>)}
+            </InfiniteScroll>
+        </div>
     )
 }

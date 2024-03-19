@@ -27,7 +27,7 @@ export const Header = () => {
       navigate(`/search/${search}`);
       setSearch('');
     }
-    
+
   };
 
   return (

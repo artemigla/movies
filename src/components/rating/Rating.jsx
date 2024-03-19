@@ -12,8 +12,8 @@ export const Rating = ({ rating }) => {
         minValue={0}
         text={rating}
         styles={buildStyles({
-          pathColor:
-            rating < 5 ? "red" : rating < 7 ? "orange" : "green"
+          pathColor: rating < 5 ? "red" : rating < 7 ? "orange" : "green", textSize: "25px"
+
         })}
       />
     </div>

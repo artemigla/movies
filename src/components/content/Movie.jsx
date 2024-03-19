@@ -24,7 +24,6 @@ export const Movie = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { data } = useFetch(`/movie/popular?api_key=${KEY}`)
   const { data: results } = useFetch(`/discover/tv?api_key=${KEY}`);
-  
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);

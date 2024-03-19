@@ -1,0 +1,38 @@
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .titlequery {
+        display: flex;
+        position: relative;
+        left: 30px;
+        margin-bottom: 30px;
+        font-size: 30px;
+        color: white;
+    }
+    .movies {
+        text-align: center;
+        margin-top: 30px;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 35px;
+        width: 10%;
+
+        .moviesSceleton {
+            text-align: center;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 35px;
+            width: 100%;
+        }
+    }
+
+    .wrapperdata {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 210px));
+        justify-content: center;
+    }
+}

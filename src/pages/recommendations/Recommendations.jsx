@@ -37,7 +37,7 @@ export const Recommendations = () => {
 
   return (
     <div className={style.container}>
-      {data?.results.length ? <div className={style.titleRecommendation}>
+      {data?.results?.length ? <div className={style.titleRecommendation}>
         <SkeletonTheme color="#505050" highlightColor="#999">
           {isLoading ? <h2>Recommendation</h2> : <Skeleton duration={2} className={style.titleRecommendation} />}
         </SkeletonTheme>

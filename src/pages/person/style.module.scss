@@ -36,7 +36,6 @@
             .biography {
                 color: white;
                 margin-left: 12px;
-                
 
                 .titlebiography {
                     font-size: 21px;
@@ -66,27 +65,27 @@
 }
 
 @media screen and (max-width: 428px) {
-    .container{
+    .container {
         position: relative;
         margin-top: 10px;
-        
-        .wrapper{
+
+        .wrapper {
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 30px;
-        
-                .content{
-                    display: grid;
-                    grid-template-columns: 1fr;
-                        
-                    .img{
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-                    .biography{
-                        text-align: center;
-                    }
+
+            .content {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                .img {
+                    margin-left: auto;
+                    margin-right: auto;
                 }
+                .biography {
+                    text-align: center;
+                }
+            }
         }
     }
 }

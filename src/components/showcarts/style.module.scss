@@ -1,0 +1,21 @@
+.wrapper {
+    width: 95%;
+
+    .index {
+        .img {
+            width: 190px;
+            height: 200px;
+            border-radius: 10px;
+        }
+    }
+
+    .title {
+        color: white;
+        font-size: 21px;
+    }
+
+    .rating {
+        margin-top: -3.5em;
+        z-index: 100px;
+    }
+}
