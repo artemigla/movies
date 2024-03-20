@@ -251,7 +251,108 @@
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 480px) {
+    .container {
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                font-size: 15px;
+
+                .wrappercarts {
+                    .carts {
+                        align-items: center;
+
+                        .img {
+                            object-fit: cover;
+                        }
+
+                        .imgsceleton {
+                            width: 158px;
+                            height: 150px;
+                        }
+
+                        .rating {
+                            margin-top: -1.5em;
+
+                            .skeleton {
+                                margin-top: -3.5em;
+                                margin-right: auto;
+                                width: 35px;
+                            }
+                        }
+
+                        .title {
+                            font-size: 14px;
+                        }
+
+                        .titleSceleton {
+                            width: 100px;
+                            height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                font-size: 15px;
+
+                .wrappercarts {
+                    .carts {
+                        align-items: center;
+
+                        .img {
+                            object-fit: cover;
+                            width: 190px;
+                        }
+
+                        .imgsceleton {
+                            width: 158px;
+                            height: 150px;
+                        }
+
+                        .rating {
+                            margin-top: -1.5em;
+
+                            .skeleton {
+                                margin-top: -3.5em;
+                                margin-right: auto;
+                                width: 35px;
+                            }
+                        }
+
+                        .title {
+                            font-size: 14px;
+                        }
+
+                        .titleSceleton {
+                            width: 100px;
+                            height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
     .container {
         .wrapper {
             display: flex;

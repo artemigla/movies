@@ -1,10 +1,6 @@
 .container {
-  margin-top: 12%;
-  width: 100%;
-
   .actors {
     color: white;
-    margin: 3px 0px 3px 0px;
 
     .titleskeleton {
       width: 50px;
@@ -14,13 +10,15 @@
   .slider {
     background-color: #0e1b32;
     margin-bottom: 35px;
+    width: 100%;
 
     .wrapper {
       .img {
         border-radius: 10px;
+        width: 100px;
       }
 
-      .sceletonimg {
+      .skeletonimg {
         display: flex;
         margin-left: auto;
         margin-right: auto;
@@ -49,7 +47,68 @@
   }
 }
 
-@media screen and(max-width: 320px) {
+@media screen and (max-width: 480px) {
+  .container {
+    width: 98%;
+    margin: 0;
+
+    .actors {
+      margin: 0;
+
+      .titleskeleton {
+        font-size: 17px;
+      }
+    }
+    .slider {
+      margin-bottom: 0;
+      .wrapper {
+        .img {
+          width: 80px;
+          height: auto;
+          object-fit: cover;
+          gap: 10px;
+        }
+
+        .name {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    width: 98%;
+    margin: 0;
+
+    .actors {
+      margin: 0;
+
+      .titleskeleton {
+        font-size: 17px;
+      }
+    }
+    .slider {
+      margin-bottom: 0;
+
+      .wrapper {
+        .img {
+          width: 90px;
+          height: auto;
+          object-fit: cover;
+          gap: 10px;
+        }
+
+        .name {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
   .container {
     width: 90%;
     margin: 0;
@@ -62,27 +121,16 @@
     }
     .slider {
       margin-bottom: 0;
+
       .wrapper {
-        margin-left: 0;
-        .noimg {
+        .img {
           display: grid;
+          width: 100px;
+          height: auto;
+          object-fit: cover;
           gap: 10px;
         }
 
-        .name {
-          font-size: 17px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and(max-width: 480px) {
-  .container {
-    margin: 0;
-    .slider {
-      width: 98%;
-      .wrapper {
         .name {
           font-size: 17px;
         }

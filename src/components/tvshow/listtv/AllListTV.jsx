@@ -67,7 +67,7 @@ export const Tvshowcontent = () => {
                                             }
                                         </SkeletonTheme>
                                         <SkeletonTheme color="#505050" highlightColor="#999">
-                                            {isLoading ? <h4 className={style.title}>{item?.name}</h4>
+                                            {isLoading ? <h4 className={style.title}>{item?.name.slice(0, 15)}</h4>
                                                 : <Skeleton duration={2} className={style.titleSceleton} />
                                             }
                                         </SkeletonTheme>

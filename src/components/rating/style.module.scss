@@ -6,14 +6,26 @@
   font-weight: bolder;
 }
 
-@media screen and (max-width: 320px) {
-  .container {
-    margin-left: 3px;
-  }
-}
 @media screen and (max-width: 720px) {
   .container {
     width: 35px;
     height: 35px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    margin-left: 1px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .container {
+    margin-left: 1px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    margin-left: 1px;
   }
 }

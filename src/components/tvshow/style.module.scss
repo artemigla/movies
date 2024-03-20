@@ -14,6 +14,7 @@
             width: 350px;
             height: 360px;
             border-radius: 12px;
+            object-fit: cover;
         }
 
         .average {
@@ -64,6 +65,103 @@
         .country {
             color: white;
             font-size: large;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .wrapper {
+            .img {
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        .average {
+            margin-top: 0.7em;
+            margin-left: 1em;
+        }
+
+        .description {
+            width: 100%;
+            text-align: center;
+
+            .overview {
+                height: auto;
+            }
+
+            .country {
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .wrapper {
+            .img {
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        .average {
+            display: block;
+            margin-top: 0.7em;
+            margin-left: 1em;
+        }
+
+        .description {
+            width: 100%;
+            text-align: center;
+
+            .country {
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .wrapper {
+            .img {
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        .average {
+            margin-top: 0.7em;
+        }
+
+        .description {
+            width: 100%;
+            text-align: center;
+
+            .country {
+                margin-right: auto;
+            }
         }
     }
 }

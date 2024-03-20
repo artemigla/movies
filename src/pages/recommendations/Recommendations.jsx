@@ -46,9 +46,9 @@ export const Recommendations = () => {
         {data?.results?.map((item) => (
           <div className={style.wrapper} key={item.id}>
             <SkeletonTheme color="#505050" highlightColor="#999">
-              {isLoading ? <img className={style.img ? style.noimg : style.img} src={`${BASE_URL_IMAGES}${item.poster_path}`} alt="" />
+              {isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}${item.poster_path}`} alt="" />
                 : <Skeleton duration={2} className={style.img} />}
-              {isLoading ? <p className={style.title}>{item.title}</p> : <Skeleton duration={2} className={style.title} />}
+              {isLoading ? <p className={style.title}>{item.title.slice(0, 15)}</p> : <Skeleton duration={2} className={style.title} />}
             </SkeletonTheme>
           </div>
         ))}

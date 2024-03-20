@@ -1,5 +1,4 @@
 .containertv {
-    width: 95%;
     margin: auto;
     margin-top: 30px;
 
@@ -16,7 +15,6 @@
                 border-radius: 10px;
                 display: flex;
                 flex-direction: column;
-                height: 230px;
                 margin: 10px;
 
                 .img {
@@ -39,6 +37,147 @@
                 .titleSceleton {
                     font-size: 17px;
                     height: 35px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .containertv {
+        width: 95%;
+        margin: auto;
+        margin-top: 30px;
+
+        .wrapperdata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 20px;
+            row-gap: 20px;
+
+            .wrapper {
+                .wrapperimg {
+                    box-shadow: 0px 0px 10px 7px rgba(71, 123, 255, 0.78);
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .img {
+                        display: flex;
+                        justify-content: center;
+                        border-radius: 10px;
+                        margin-left: auto;
+                        object-fit: cover;
+                        margin-right: auto;
+                    }
+
+                    .title {
+                        font-size: 15px;
+                        font-weight: lighter;
+                        color: white;
+                        text-align: center;
+                        white-space: wrap;
+                    }
+
+                    .titleSceleton {
+                        font-size: 15px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .containertv {
+        width: 95%;
+        margin: auto;
+        margin-top: 30px;
+
+        .wrapperdata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            column-gap: 20px;
+            row-gap: 20px;
+
+            .wrapper {
+                width: 98%;
+                .wrapperimg {
+                    box-shadow: 0px 0px 10px 7px rgba(71, 123, 255, 0.78);
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .img {
+                        display: flex;
+                        width: 100%;
+                        justify-content: center;
+                        border-radius: 10px;
+                        margin-left: auto;
+                        object-fit: cover;
+                        margin-right: auto;
+                    }
+
+                    .title {
+                        font-size: 15px;
+                        font-weight: lighter;
+                        color: white;
+                        text-align: center;
+                        white-space: wrap;
+                    }
+
+                    .titleSceleton {
+                        font-size: 15px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .containertv {
+        .wrapperdata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+
+            .wrapper {
+                width: 98%;
+                
+                .wrapperimg {
+                    box-shadow: 0px 0px 10px 7px rgba(71, 123, 255, 0.78);
+                    border-radius: 10px;
+                    display: flex;
+                    width: 98%;
+                    margin: 0;
+                    flex-direction: column;
+
+                    .img {
+                        display: flex;
+                        width: 99%;
+                        justify-content: center;
+                        border-radius: 10px;
+                        margin-left: auto;
+                        object-fit: cover;
+                        margin-right: auto;
+                    }
+
+                    .title {
+                        font-size: 15px;
+                        font-weight: lighter;
+                        color: white;
+                        text-align: center;
+                        white-space: wrap;
+                    }
+
+                    .titleSceleton {
+                        font-size: 15px;
+                        height: 10px;
+                    }
                 }
             }
         }
