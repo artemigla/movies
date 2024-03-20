@@ -44,7 +44,6 @@
 
 @media screen and (max-width: 320px) {
     .container {
-        
         width: 90%;
 
         .slider {
@@ -57,5 +56,20 @@
             }
         }
     }
-    
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 98%;
+
+        .slider {
+            padding: 0;
+
+            .wrapper {
+                .title {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
 }

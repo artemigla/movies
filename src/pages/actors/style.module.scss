@@ -76,3 +76,17 @@
     }
   }
 }
+
+@media screen and(max-width: 480px) {
+  .container {
+    margin: 0;
+    .slider {
+      width: 98%;
+      .wrapper {
+        .name {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}

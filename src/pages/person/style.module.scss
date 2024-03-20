@@ -96,28 +96,35 @@
     }
 }
 
-// @media screen and (max-width: 428px) {
-//     .container {
-//         position: relative;
-//         margin-top: 10px;
+@media screen and (max-width: 480px) {
+    .container {
+        width: 98%;
+        margin-top: 10px;
 
-//         .wrapper {
-//             margin-left: auto;
-//             margin-right: auto;
-//             margin-bottom: 30px;
+        .wrapper {
+            .content {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
 
-//             .content {
-//                 display: grid;
-//                 grid-template-columns: 1fr;
+                .img {
+                    position: relative;
+                    left: 25px;
+                    width: 100%;
+                }
 
-//                 .img {
-//                     margin-left: auto;
-//                     margin-right: auto;
-//                 }
-//                 .biography {
-//                     text-align: center;
-//                 }
-//             }
-//         }
-//     }
-// }
+                .biography {
+                    display: flex;
+                    flex-direction: column;
+
+                    .title {
+                        display: flex;
+                        justify-content: center;
+                        font-weight: normal;
+
+                    }
+                }
+            }
+        }
+    }
+}
