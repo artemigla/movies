@@ -35,7 +35,7 @@ export const Details = () => {
       <div className={style.wrapper}>
         <div className={style.overviewContent}>
           {(
-            <div>
+            <div className={style.blockimg}>
               <SkeletonTheme color="#505050" highlightColor="#999">
                 {isLoading ? <img className={style.img} src={posterUrl} alt={data?.original_title} /> :
                   <Skeleton duration={2} className={style.img} />
@@ -90,7 +90,7 @@ export const Details = () => {
             </div>
           </div>
         </div>
-        <div className={style.titleRecommendation}>
+        <div className={style.cast}>
           <Cast />
         </div>
         <div className={style.titleRecommendation}>

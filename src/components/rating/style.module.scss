@@ -6,6 +6,11 @@
   font-weight: bolder;
 }
 
+@media screen and (max-width: 320px) {
+  .container {
+    margin-left: 3px;
+  }
+}
 @media screen and (max-width: 720px) {
   .container {
     width: 35px;

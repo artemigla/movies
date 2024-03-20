@@ -36,3 +36,20 @@
         justify-content: center;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .container {
+        width: 98%;
+
+        .titlequery {
+            position: relative;
+            font-size: 17px;
+            top: 10px;
+            left: 0;
+        }
+
+        .wrapperdata {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

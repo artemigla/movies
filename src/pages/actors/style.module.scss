@@ -49,14 +49,28 @@
   }
 }
 
-@media screen and(max-width: 768px) {
+@media screen and(max-width: 320px) {
   .container {
-    margin: 12px;
+    width: 90%;
+    margin: 0;
+
+    .actors {
+      margin: 0;
+      .titleskeleton {
+        font-size: 17px;
+      }
+    }
     .slider {
+      margin-bottom: 0;
       .wrapper {
+        margin-left: 0;
         .noimg {
           display: grid;
           gap: 10px;
+        }
+
+        .name {
+          font-size: 17px;
         }
       }
     }

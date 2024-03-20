@@ -67,11 +67,13 @@
             border: 1px solid white;
             width: 120px;
           }
+
           .genre {
             display: flex;
             grid-template-columns: auto;
             width: 50%;
             margin-left: 30px;
+
             .wrappergenres {
               margin: 5px;
               border-radius: 10px;
@@ -96,8 +98,6 @@
 
         .videoWrapper {
           width: 50%;
-          height: 40vh;
-          margin-right: auto;
         }
       }
     }
@@ -141,6 +141,108 @@
 
     .content {
       color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    width: 99%;
+    display: flex;
+
+    position: relative;
+    .wrapper {
+      .overviewContent {
+        display: flex;
+        flex-direction: column;
+
+        .blockimg {
+          display: block;
+          justify-content: center;
+          align-items: center;
+
+          .img {
+            width: 219px;
+            height: auto;
+            display: flex;
+          }
+
+          .average {
+            position: relative;
+            top: 10px;
+          }
+        }
+
+        .detail {
+          width: 99%;
+          margin-left: -30px;
+          position: relative;
+
+          .title {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            .skeletontitle {
+              font-size: 17px;
+              display: flex;
+              width: 100%;
+            }
+          }
+
+          .overview {
+            width: 95%;
+          }
+
+          .data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .datan {
+              display: flex;
+              flex-direction: row;
+              margin-right: auto;
+            }
+
+            .genre {
+              display: grid;
+              margin-top: 21px;
+              margin-left: -20px;
+              padding: 0;
+              gap: 5px;
+
+              .wrappergenres {
+                margin: 0;
+                width: 80%;
+                margin-left: -68px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      .cast {
+        width: 90%;
+      }
+
+      .titleRecommendation {
+        margin: 0;
+
+        h2 {
+          font-size: 21px;
+        }
+      }
+
+      .reviews {
+        width: 95%;
+        margin-left: -21px;
+
+        .detailsReviews {
+          width: 98%;
+        }
+      }
     }
   }
 }

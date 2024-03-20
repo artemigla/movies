@@ -127,7 +127,6 @@
           justify-content: center;
           flex-direction: column;
           padding-top: 12px;
-          height: 25vh;
 
           .skeleton {
             height: 50px;
@@ -146,6 +145,59 @@
             top: -2.5em;
             left: -3.5em;
             border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container {
+    .maincontent {
+      .wrapper {
+        .movies {
+          font-size: 17px;
+          width: 80px;
+          height: 20px;
+        }
+
+        .slidermovies {
+          .imgcontainer {
+            .img {
+              width: 128px;
+              height: 100px;
+            }
+
+            .average {
+              top: -2em;
+            }
+          }
+        }
+      }
+    }
+
+    .wrappercontainer {
+      .title {
+        font-size: 17px;
+        width: 80px;
+        height: 20px;
+      }
+
+      .slider {
+        width: 98%;
+        .wrapper {
+          .imgwrapper {
+            .img {
+              width: 128px;
+              height: 100px;
+            }
+
+            .average {
+              position: relative;
+              top: -2em;
+              left: -3.2em;
+            }
           }
         }
       }

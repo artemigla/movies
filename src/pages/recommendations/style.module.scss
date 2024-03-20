@@ -41,3 +41,21 @@
     margin-right: auto;
     border-radius: 10px;
 }
+
+@media screen and (max-width: 320px) {
+    .container {
+        
+        width: 90%;
+
+        .slider {
+            padding: 0;
+
+            .wrapper {
+                .title {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+    
+}

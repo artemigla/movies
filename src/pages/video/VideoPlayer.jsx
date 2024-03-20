@@ -6,8 +6,8 @@ import { getVideoThunk } from '../../components/redux/slices/videoSlice';
 import style from './style.module.scss';
 
 const opts = {
-  height: '420',
-  width: '768',
+  // height: '100%',
+  // width: '100%',
   playerVars: {
     autoplay: 0,
   },
@@ -28,13 +28,11 @@ export const VideoPlayer = () => {
 
   return (
     <div className={style.container}>
-      <div className={style.youtubeWrapper}>
-        <YouTube
-          className={style.youtube}
-          videoId={trailer?.key}
-          opts={opts}
-        />
-      </div>
+      <YouTube
+        className={style.youtube}
+        videoId={trailer?.key}
+        opts={opts}
+      />
     </div>
   )
 }
