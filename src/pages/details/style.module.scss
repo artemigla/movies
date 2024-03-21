@@ -86,9 +86,10 @@
                 border-radius: 10px;
               }
 
-              .title {
+              .genretitle {
                 font-size: 17px;
                 color: white;
+                padding: 1px 5px 1px 5px;
                 font-weight: lighter;
                 white-space: nowrap;
               }
@@ -146,6 +147,101 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+
+    .wrapper {
+      .overviewContent {
+        .blockimg {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+
+          .img {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .average {
+            position: relative;
+            top: 10px;
+          }
+        }
+
+        .detail {
+          margin-top: 30px;
+          .title {
+            position: relative;
+
+            .skeletontitle {
+              font-size: 21px;
+              position: relative;
+              width: 90%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+
+          .overview {
+            width: 86%;
+            margin-left: -10px;
+          }
+
+          .data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .datan {
+              position: relative;
+              left: -45%;
+            }
+
+            .genre {
+              position: relative;
+              left: -34%;
+
+              .wrappergenres {
+                .genretitle{
+                  padding: 1px 3px 1px 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .cast {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .titleRecommendation {
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+        h2 {
+          font-size: 21px;
+        }
+      }
+
+      .reviews {
+        width: 95%;
+
+        .detailsReviews {
+          width: 98%;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .container {
     width: 99%;
@@ -165,9 +261,6 @@
           .img {
             margin-left: auto;
             margin-right: auto;
-            width: 60vw;
-            height: 100vh;
-            object-fit: cover;
           }
 
           .average {
@@ -274,17 +367,6 @@
 
         .blockimg {
           display: block;
-          margin-left: auto;
-          margin-right: auto;
-
-          .img {
-            margin-left: auto;
-            margin-right: auto;
-            width: 60vw;
-            height: 100vh;
-            object-fit: cover;
-            border: 1px solid white;
-          }
 
           .average {
             position: relative;

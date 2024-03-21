@@ -135,6 +135,64 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .container {
+        overflow-x: hidden;
+
+        .movies {
+            width: 50%;
+            font-size: 28px;
+        }
+
+        .wrapper {
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                font-size: 15px;
+                margin-left: auto;
+                margin-right: auto;
+
+                .wrappercarts {
+                    .carts {
+                        align-items: center;
+
+                        .img {
+                            width: 188px;
+                            height: 180px;
+                        }
+
+                        .imgsceleton {
+                            width: 188px;
+                            height: 180px;
+                        }
+
+                        .rating {
+                            margin-right: auto;
+
+                            .skeleton {
+                                margin-right: auto;
+                                width: 45px;
+                                height: 45px;
+                            }
+                        }
+
+                        .title {
+                            font-size: 17px;
+                            margin-bottom: 12px;
+                        }
+
+                        .titleSceleton {
+                            width: 120px;
+                            margin-bottom: 12px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .container {
         overflow-x: hidden;
@@ -195,64 +253,6 @@
 
 @media screen and (max-width: 480px) {
     .container {
-        overflow-x: hidden;
-
-        .movies {
-            width: 50%;
-            font-size: 28px;
-        }
-
-        .wrapper {
-            position: relative;
-
-            .wrapperdata {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                font-size: 15px;
-                width: 95%;
-                margin-left: auto;
-                margin-right: auto;
-
-                .wrappercarts {
-                    .carts {
-                        align-items: center;
-
-                        .img {
-                            width: 188px;
-                            height: 180px;
-                        }
-
-                        .imgsceleton {
-                            width: 188px;
-                            height: 180px;
-                        }
-
-                        .rating {
-                            border-radius: 50%;
-                            margin-right: auto;
-
-                            .skeleton {
-                                margin-left: 5em;
-                            }
-                        }
-
-                        .title {
-                            font-size: 16px;
-                        }
-
-                        .titleSceleton {
-                            width: 100px;
-                            height: 14px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .container {
         .wrapper {
             display: flex;
             justify-content: center;
@@ -277,7 +277,7 @@
                         }
 
                         .rating {
-                            margin-top: -1.5em;
+                            margin-top: -2em;
 
                             .skeleton {
                                 margin-top: -3.5em;
@@ -339,6 +339,47 @@
 
                         .title {
                             font-size: 14px;
+                        }
+
+                        .titleSceleton {
+                            width: 100px;
+                            height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        .wrapper {
+            .wrapperdata {
+                .wrappercarts {
+                    .carts {
+                        .img {
+                            width: 170px;
+                        }
+
+                        .imgsceleton {
+                            width: 160px;
+                        }
+
+                        .rating {
+                            position: relative;
+                            top: -0.5em;
+
+                            .skeleton {
+                                margin-top: -3.5em;
+                                margin-right: auto;
+                                width: 35px;
+                                height: 35px;
+                            }
+                        }
+
+                        .title {
+                            font-size: 16px;
                         }
 
                         .titleSceleton {

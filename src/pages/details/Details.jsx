@@ -79,7 +79,7 @@ export const Details = () => {
                 {data?.genres?.map(({ id, name }) => (
                   <SkeletonTheme key={id} color="#505050" highlightColor="#999">
                     <div className={style.wrappergenres}>
-                      {isLoading ? <span className={style.title}>{name}</span> : <Skeleton duration={2} className={style.skeletontitle} />}
+                      {isLoading ? <span className={style.genretitle}>{name}</span> : <Skeleton duration={2} className={style.skeletontitle} />}
                     </div>
                   </SkeletonTheme>
                 ))}
