@@ -14,7 +14,6 @@
   .slider {
     background-color: #0e1b32;
     margin-bottom: 35px;
-    padding: 10px;
 
     .wrapper {
       .img {
@@ -47,6 +46,27 @@
         color: white;
         font-size: 12px;
         text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    .actors {
+      .titleskeleton {
+        font-size: 17px;
+      }
+    }
+    .slider {
+      .wrapper {
+        .img {
+          width: 100px;
+        }
+
+        .name {
+          font-size: 17px;
+        }
       }
     }
   }
@@ -99,7 +119,6 @@
     margin: 0;
 
     .actors {
-
       .titleskeleton {
         font-size: 17px;
       }
@@ -136,21 +155,22 @@
 
 @media screen and (max-width: 400px) {
   .container {
-    // margin: 0;
-
     .actors {
       .titleskeleton {
         font-size: 17px;
       }
     }
+
     .slider {
-   margin-left: auto;
-   margin-right: auto;
+      margin-left: auto;
+      margin-right: auto;
+
       .wrapper {
         .img {
           width: 120px;
           object-fit: cover;
         }
+
         .name {
           font-size: 17px;
         }
@@ -187,12 +207,15 @@
     margin: 0;
     margin-left: auto;
     margin-right: auto;
+
     .actors {
       margin: 0;
+
       .titleskeleton {
         font-size: 17px;
       }
     }
+
     .slider {
       margin-bottom: 0;
 

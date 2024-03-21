@@ -206,7 +206,7 @@
               left: -34%;
 
               .wrappergenres {
-                .genretitle{
+                .genretitle {
                   padding: 1px 3px 1px 3px;
                 }
               }
@@ -575,7 +575,6 @@
 
 @media screen and (max-width: 420px) {
   .container {
-    // width: 99%;
     display: flex;
     flex-direction: column;
 
@@ -671,7 +670,6 @@
       }
 
       .reviews {
-        
         width: 95%;
         margin-left: 0;
         .detailsReviews {
