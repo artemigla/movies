@@ -7,6 +7,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import style from './style.module.scss';
 
 export const Tvshow = () => {
+    window.scroll(0, 0);
     const { ids } = useParams();
     const { data } = useFetch(`/tv/${ids}?api_key=${KEY}`);
     const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +15,7 @@ export const Tvshow = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true)
-        }, 1500)
+        }, 700)
     }, [])
 
     return (

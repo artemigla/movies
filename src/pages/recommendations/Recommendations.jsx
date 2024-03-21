@@ -26,7 +26,7 @@ export const Recommendations = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
-    }, 1500);
+    }, 700);
   }, [isLoading]);
 
   useEffect(() => {

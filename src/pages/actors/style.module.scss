@@ -15,7 +15,10 @@
     .wrapper {
       .img {
         border-radius: 10px;
-        width: 100px;
+        height: 120px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .skeletonimg {
@@ -31,7 +34,7 @@
         background-image: url("../../assets/no-image-available28.png");
         background-size: cover;
         height: 120px;
-        width: 100px;
+        // width: 100px;
         display: flex;
         margin-left: auto;
         margin-right: auto;
@@ -42,6 +45,35 @@
         color: white;
         font-size: 12px;
         text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    width: 100%;
+    margin: 0;
+
+    .actors {
+      margin: 0;
+
+      .titleskeleton {
+        font-size: 17px;
+      }
+    }
+    .slider {
+      margin-bottom: 0;
+
+      .wrapper {
+        row-gap: 5px;
+        .img {
+          object-fit: cover;
+        }
+
+        .name {
+          font-size: 17px;
+        }
       }
     }
   }
@@ -61,6 +93,7 @@
     }
     .slider {
       margin-bottom: 0;
+
       .wrapper {
         .img {
           width: 80px;
@@ -94,7 +127,7 @@
 
       .wrapper {
         .img {
-          width: 90px;
+          // width: 80px;
           height: auto;
           object-fit: cover;
           gap: 10px;

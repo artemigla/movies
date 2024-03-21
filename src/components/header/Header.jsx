@@ -15,7 +15,7 @@ export const Header = () => {
     setTimeout(() => {
       setIsLoading(false);
       setTitle("Live movie")
-    }, 1500)
+    }, 700)
   }, []);
 
   const handlerInput = (event) => {

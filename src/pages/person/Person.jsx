@@ -14,7 +14,7 @@ export const Person = () => {
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true);
-        }, 1500)
+        }, 700)
     }, [isLoading])
 
     return (

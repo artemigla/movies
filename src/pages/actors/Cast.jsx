@@ -26,7 +26,7 @@ export const Cast = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
-    }, 1500);
+    }, 700);
 
   }, []);
 

@@ -27,7 +27,7 @@ export const Movie = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
-    }, 1500);
+    }, 700);
   }, [])
 
   return (
