@@ -152,6 +152,83 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    .wrapperslider {
+      margin-bottom: 0;
+      .slider {
+        .wrapperimg {
+          .img {
+            height: auto;
+          }
+        }
+      }
+    }
+    .maincontent {
+      .wrapper {
+        .movies {
+          font-size: large;
+          width: 90px;
+          height: 21px;
+          font-weight: lighter;
+          padding: 0;
+        }
+
+        .slidermovies {
+          width: 100%;
+
+          .imgcontainer {
+            .img {
+              width: 130px;
+              object-fit: cover;
+            }
+
+            .average {
+              position: relative;
+              top: -1.8em;
+            }
+          }
+        }
+      }
+    }
+
+    .wrappercontainer {
+      width: 95%;
+
+      .title {
+        font-size: large;
+        width: 80px;
+        height: 20px;
+        font-weight: lighter;
+
+        a {
+          color: #000000;
+        }
+      }
+
+      .slider {
+        .wrapper {
+          margin-left: auto;
+          margin-right: auto;
+
+          .imgwrapper {
+            .img {
+              width: 130px;
+              object-fit: cover;
+            }
+
+            .average {
+              position: relative;
+              margin-left: 1em;
+              top: -1.9em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 720px) {
   .container {
     .wrapperslider {
@@ -388,7 +465,7 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 380px) {
   .container {
     .wrapperslider {
       margin-bottom: 0;
@@ -418,7 +495,7 @@
 
           .imgcontainer {
             .img {
-              width: 120px;
+              width: 140px;
               object-fit: cover;
             }
 
@@ -453,12 +530,13 @@
 
           .imgwrapper {
             .img {
-              width: 120px;
+              width: 140px;
               object-fit: cover;
             }
 
             .average {
-              margin-left: -2.1em;
+              position: relative;
+              left: -3.1em;
               top: -1.9em;
             }
           }

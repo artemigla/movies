@@ -116,7 +116,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 35px;
-    margin-bottom: 15px;
+    margin-top: 80px;
+    margin-bottom: 55px;
 
     .detailsReviews {
       display: block;
@@ -145,7 +146,7 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .container {
     width: 99%;
     display: flex;
@@ -164,6 +165,8 @@
           .img {
             margin-left: auto;
             margin-right: auto;
+            width: 60vw;
+            height: 100vh;
             object-fit: cover;
           }
 
@@ -234,14 +237,129 @@
       .cast {
         margin-left: auto;
         margin-right: auto;
-        width: 95%;
       }
 
       .titleRecommendation {
         margin: 0;
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
+
+        h2 {
+          font-size: 21px;
+        }
+      }
+
+      .reviews {
         width: 95%;
+
+        .detailsReviews {
+          width: 98%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+
+    .wrapper {
+      .overviewContent {
+        display: flex;
+        flex-direction: column;
+
+        .blockimg {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+
+          .img {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60vw;
+            height: 100vh;
+            object-fit: cover;
+            border: 1px solid white;
+          }
+
+          .average {
+            position: relative;
+            top: 10px;
+          }
+        }
+
+        .detail {
+          .title {
+            margin: 0;
+            padding: 0;
+            width: 83%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .skeletontitle {
+              font-size: 21px;
+              position: relative;
+              width: 90%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+
+          .overview {
+            width: 86%;
+            margin-left: -10px;
+          }
+
+          .data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .datan {
+              display: flex;
+              flex-direction: row;
+              margin-right: auto;
+            }
+
+            .genre {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              position: relative;
+              left: -20px;
+              width: 80%;
+              margin-top: 21px;
+              margin-left: auto;
+              margin-right: auto;
+              padding: 0;
+              gap: 3px;
+
+              .wrappergenres {
+                margin: 0;
+                padding: 0;
+                width: 80%;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      .cast {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .titleRecommendation {
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
 
         h2 {
           font-size: 21px;
@@ -375,7 +493,7 @@
 
 @media screen and (max-width: 420px) {
   .container {
-    width: 99%;
+    // width: 99%;
     display: flex;
     flex-direction: column;
 
@@ -462,11 +580,6 @@
         }
       }
 
-      .cast {
-        width: 90%;
-        position: relative;
-      }
-
       .titleRecommendation {
         position: relative;
 
@@ -476,9 +589,110 @@
       }
 
       .reviews {
+        
         width: 95%;
         margin-left: 0;
+        .detailsReviews {
+          width: 98%;
+        }
+      }
+    }
+  }
+}
 
+@media screen and (max-width: 380px) {
+  .container {
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+
+    .wrapper {
+      .overviewContent {
+        display: flex;
+        flex-direction: column;
+
+        .blockimg {
+          display: flex;
+          flex-direction: column;
+
+          .img {
+            width: 260px;
+            object-fit: cover;
+          }
+
+          .average {
+            position: relative;
+            top: 10px;
+          }
+        }
+
+        .detail {
+          .title {
+            margin: 0;
+            padding: 0;
+            width: 83%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .skeletontitle {
+              font-size: 17px;
+              position: relative;
+              width: 10%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+
+          .overview {
+            width: 86%;
+            margin-left: -10px;
+          }
+
+          .data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .datan {
+              display: flex;
+              flex-direction: row;
+              margin-right: auto;
+            }
+
+            .genre {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              position: relative;
+              left: -20px;
+              width: 100%;
+              margin-top: 21px;
+              margin-left: auto;
+              margin-right: auto;
+              padding: 0;
+              gap: 3px;
+
+              .wrappergenres {
+                margin: 0;
+                padding: 0;
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+
+      .titleRecommendation {
+        h2 {
+          font-size: 21px;
+        }
+      }
+
+      .reviews {
         .detailsReviews {
           width: 98%;
         }

@@ -47,7 +47,7 @@ export const Cast = () => {
           <Link to={`/person/${item.id}`} className={style.wrapper} key={item.id}>
             <SkeletonTheme color="#505050" highlightColor="#999">
               {isLoading ?
-                <img className={style.img ? style.noimg : style.img} src={`${BASE_URL_IMAGES}${item?.profile_path}`} alt="" />
+                <img className={style.img} src={`${BASE_URL_IMAGES}${item?.profile_path}`} alt="" />
                 : <Skeleton duration={2} className={style.skeletonimg} />
               }
               {isLoading ? <p className={style.name}>{item.name}</p> : <Skeleton duration={2} className={style.name} />}

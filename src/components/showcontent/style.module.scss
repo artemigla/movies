@@ -352,6 +352,57 @@
     }
 }
 
+@media screen and (max-width: 380px) {
+    .container {
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .wrapperdata {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                font-size: 15px;
+
+                .wrappercarts {
+                    .carts {
+                        align-items: center;
+
+                        .img {
+                            width: 160px;
+                        }
+
+                        .imgsceleton {
+                            width: 160px;
+                        }
+
+                        .rating {
+                            position: relative;
+                            top: -0.5em;
+
+                            .skeleton {
+                                margin-top: -3.5em;
+                                margin-right: auto;
+                                width: 35px;
+                                height: 35px;
+                            }
+                        }
+
+                        .title {
+                            font-size: 14px;
+                        }
+
+                        .titleSceleton {
+                            width: 100px;
+                            height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 320px) {
     .container {
         .wrapper {

@@ -1,4 +1,8 @@
 .container {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
   .actors {
     color: white;
 
@@ -10,15 +14,15 @@
   .slider {
     background-color: #0e1b32;
     margin-bottom: 35px;
-    width: 100%;
+    padding: 10px;
 
     .wrapper {
       .img {
-        border-radius: 10px;
-        height: 120px;
-        display: flex;
+        width: 120px;
+        height: auto;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 10px;
       }
 
       .skeletonimg {
@@ -26,15 +30,13 @@
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px;
-        height: 120px;
+        height: auto;
         width: 100px;
       }
 
       .noimg {
         background-image: url("../../assets/no-image-available28.png");
-        background-size: cover;
         height: 120px;
-        // width: 100px;
         display: flex;
         margin-left: auto;
         margin-right: auto;
@@ -50,25 +52,17 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .container {
-    width: 100%;
-    margin: 0;
-
     .actors {
-      margin: 0;
-
       .titleskeleton {
         font-size: 17px;
       }
     }
     .slider {
-      margin-bottom: 0;
-
       .wrapper {
-        row-gap: 5px;
         .img {
-          object-fit: cover;
+          width: 120px;
         }
 
         .name {
@@ -81,25 +75,18 @@
 
 @media screen and (max-width: 480px) {
   .container {
-    width: 98%;
     margin: 0;
 
     .actors {
-      margin: 0;
 
       .titleskeleton {
         font-size: 17px;
       }
     }
     .slider {
-      margin-bottom: 0;
-
       .wrapper {
         .img {
           width: 80px;
-          height: auto;
-          object-fit: cover;
-          gap: 10px;
         }
 
         .name {
@@ -112,27 +99,35 @@
 
 @media screen and (max-width: 420px) {
   .container {
-    width: 98%;
-    margin: 0;
 
     .actors {
-      margin: 0;
-
       .titleskeleton {
         font-size: 17px;
       }
     }
     .slider {
-      margin-bottom: 0;
+      padding: 0;
+      margin: 0;
+      width: 98%;
+    }
+  }
+}
 
+@media screen and (max-width: 380px) {
+  .container {
+    margin: 0;
+
+    .actors {
+      .titleskeleton {
+        font-size: 17px;
+      }
+    }
+    .slider {
       .wrapper {
         .img {
-          // width: 80px;
-          height: auto;
+          width: 120px;
           object-fit: cover;
-          gap: 10px;
         }
-
         .name {
           font-size: 17px;
         }
@@ -143,9 +138,9 @@
 
 @media screen and (max-width: 320px) {
   .container {
-    width: 90%;
     margin: 0;
-
+    margin-left: auto;
+    margin-right: auto;
     .actors {
       margin: 0;
       .titleskeleton {
@@ -156,12 +151,10 @@
       margin-bottom: 0;
 
       .wrapper {
-        .img {
-          display: grid;
+        .noimg {
           width: 100px;
           height: auto;
           object-fit: cover;
-          gap: 10px;
         }
 
         .name {

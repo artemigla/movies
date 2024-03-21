@@ -1,5 +1,7 @@
 .container {
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 
     .titleRecommendation {
         color: white;
@@ -9,34 +11,34 @@
     }
 
     .slider {
-        padding: 10px;
-        background-color: #0e1b32;
+        // padding: 10px;
         height: 140px;
-
+        margin-left: auto;
+        margin-right: auto;
         .wrapper {
             border-radius: 10px;
 
             .img {
+                width: 120px;
+                height: auto;
                 margin-left: auto;
                 margin-right: auto;
-                height: 120px;
                 border-radius: 10px;
+            }
+
+            .title {
+                color: white;
+                text-align: center;
+                margin-bottom: 10px;
+                font-size: 17px;
+                margin-bottom: 52px;
             }
         }
     }
 }
 
-.title {
-    color: white;
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 12px;
-}
-
 @media screen and (max-width: 720px) {
     .container {
-        width: 100%;
-
         .slider {
             padding: 0;
             margin: 0;
@@ -44,7 +46,7 @@
 
             .wrapper {
                 .img {
-                    width: 100px;
+                    width: 120px;
                 }
                 .title {
                     font-size: 17px;
@@ -56,13 +58,7 @@
 
 @media screen and (max-width: 480px) {
     .container {
-        width: 98%;
-
         .slider {
-            padding: 0;
-            margin: 0;
-            width: 98%;
-
             .wrapper {
                 .img {
                     width: 80px;
@@ -77,16 +73,32 @@
 
 @media screen and (max-width: 420px) {
     .container {
-        width: 98%;
 
         .slider {
-            padding: 0;
-            margin: 0;
-            width: 98%;
-
             .wrapper {
                 .img {
                     width: 80px;
+                }
+                .title {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .container {
+        position: relative;
+        .slider {
+            padding: 0;
+            margin-left: auto;
+            margin-right: auto;
+
+            .wrapper {
+                .img {
+                    width: 120px;
+                    object-fit: cover;
                 }
                 .title {
                     font-size: 17px;
