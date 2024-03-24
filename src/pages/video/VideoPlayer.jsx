@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import YouTube from 'react-youtube';
-import { getVideoThunk } from '../../components/redux/slices/videoSlice';
+import {useFetch} from '../../hooks/useFetch';
+import { KEY } from '../../constants/CONSTANTS';
 import style from './style.module.scss';
 
 const opts = {
@@ -15,24 +15,19 @@ const opts = {
 
 export const VideoPlayer = () => {
   const { ids } = useParams();
-  const dispatch = useDispatch();
-  const selector = useSelector(state => state.video.video);
-
-  useEffect(() => {
-    dispatch(getVideoThunk(ids));
-  }, [dispatch, ids]);
-
-  const trailer = selector?.videos?.results?.find((item) => {
+  const {data } = useFetch(`/movie/${ids}?api_key=${KEY}&append_to_response=videos`);
+  
+  const trailer = data?.videos?.results?.find((item) => {
     return item.name === 'Official Trailer'
   });
 
   return (
     <div className={style.container}>
-      <YouTube
+      {<YouTube
         className={style.youtube}
         videoId={trailer?.key}
         opts={opts}
-      />
+      />}
     </div>
   )
 }

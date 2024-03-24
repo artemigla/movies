@@ -2,7 +2,6 @@
   width: 95%;
   margin-left: auto;
   margin-right: auto;
-
   .actors {
     color: white;
 
@@ -12,7 +11,6 @@
   }
 
   .slider {
-    background-color: #0e1b32;
     margin-bottom: 35px;
 
     .wrapper {
@@ -44,8 +42,14 @@
 
       .name {
         color: white;
-        font-size: 12px;
+        font-size: 17px;
         text-align: center;
+      }
+
+      .character{
+        font-size: 15px;
+        text-align: center;
+        color: gray;
       }
     }
   }

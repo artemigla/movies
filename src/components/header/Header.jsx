@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from './styles.module.scss';
 import { RxAvatar } from 'react-icons/rx';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
+import { ThemeContext } from "../../context/theme-context";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+  const {theme, toggleTheme} = useContext(ThemeContext);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [title, setTitle] = useState("");
@@ -27,11 +29,10 @@ export const Header = () => {
       navigate(`/search/${search}`);
       setSearch('');
     }
-
   };
 
   return (
-    <header className={style.container}>
+    <header className={style.container} style={{backgroundColor: theme?.background, color: theme?.color}}>
       <div className={style.wrapper}>
         <div className={style.title}>
           <SkeletonTheme color="#202020" highlightColor="#444">
@@ -52,7 +53,12 @@ export const Header = () => {
           </SkeletonTheme>
         </div>
         <SkeletonTheme color="#202020" highlightColor="#444">
-          {!isLoading ? <RxAvatar className={style.avatar} /> : <Skeleton className={style.avatar} duration={2} />}
+          <div className={style.rigthcontent}>
+            <div className={style.changetheme}>
+            <button onClick={toggleTheme}>Toggle</button>
+            </div>
+            {!isLoading ? <RxAvatar className={style.avatar} /> : <Skeleton className={style.avatar} duration={2} />}
+          </div>
         </SkeletonTheme>
       </div>
     </header>

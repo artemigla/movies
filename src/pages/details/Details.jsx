@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import dayjs from "dayjs";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -11,18 +11,26 @@ import { Cast } from '../actors/Cast.jsx';
 import { Recommendations } from '../recommendations/Recommendations';
 import { Comments } from './Comments';
 import NoPoster from '../../assets/noposter.jpg';
-import style from './style.module.scss';
 import { useSelector } from 'react-redux';
+import style from './style.module.scss';
+import { ThemeContext } from '../../context/theme-context.js';
+
 
 export const Details = () => {
   const { ids } = useParams();
   const { data } = useFetch(`/movie/${ids}?api_key=${KEY}`);
   const [isLoading, setIsLoading] = useState(false);
   const { url } = useSelector(state => state?.main);
-
+  const { theme } = useContext(ThemeContext);
   const posterUrl = data?.poster_path
     ? url?.poster + data?.poster_path
     : NoPoster;
+
+  const toHoursAndMinutes = (totalMinutes) => {
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,8 +39,12 @@ export const Details = () => {
   }, [isLoading]);
 
   return (
-    <div className={style.container}>
+    <div className={style.container} style={{ backgroundColor: theme.background, color: theme.color }}>
       <div className={style.wrapper}>
+        <div className={style.backdrop}>
+          <img src={url?.backdrop + data?.backdrop_path} alt='' />
+        </div>
+
         <div className={style.overviewContent}>
           {(
             <div className={style.blockimg}>
@@ -67,38 +79,47 @@ export const Details = () => {
                 : <Skeleton duration={2} className={style.skeletonoverview} />
               }
             </SkeletonTheme>
-            <div className={style.data} >
-              <SkeletonTheme color="#505050" highlightColor="#999">
-                {isLoading ?
-                  <span className={style.datan}>
-                    {dayjs(data?.release_date).format("MMMM D, YYYY")}
-                  </span> : <Skeleton duration={2} className={style.skeletondata} />
-                }
-              </SkeletonTheme>
-              <div className={style.genre}>
-                {data?.genres?.map(({ id, name }) => (
-                  <SkeletonTheme key={id} color="#505050" highlightColor="#999">
-                    <div className={style.wrappergenres}>
-                      {isLoading ? <span className={style.genretitle}>{name}</span> : <Skeleton duration={2} className={style.skeletontitle} />}
-                    </div>
-                  </SkeletonTheme>
-                ))}
-              </div>
+            <div className={style.genre}><p>Genres:</p>
+              {data?.genres?.map(({ id, name }) => (
+                <SkeletonTheme key={id} color="#505050" highlightColor="#999">
+                  <div className={style.wrappergenres}>
+                    {isLoading ? <span className={style.genretitle}>{name}</span> : <Skeleton duration={2} className={style.skeletontitle} />}
+                  </div>
+                </SkeletonTheme>
+              ))}
             </div>
+            <hr />
+            <div className={style.info}><b>Status: </b><p>{data?.status}</p>
+              <span className={style.datan}><b>Release data: </b> <p>{dayjs(data?.release_date).format("MMMM D, YYYY")}</p>
+                {data?.runtime && (
+                  <div className={style.infoitem}>
+                    <span className={style.runtime}>
+                      Runtime:{" "}
+                    </span>
+                    <span className={style.textruntime}>
+                      {toHoursAndMinutes(
+                        data?.runtime
+                      )}
+                    </span>
+                  </div>
+                )}
+              </span>
+            </div>
+            <hr />
             <div className={style.videoWrapper}>
               <VideoPlayer />
             </div>
           </div>
         </div>
-        <div className={style.cast}>
-          <Cast />
-        </div>
-        <div className={style.titleRecommendation}>
-          <Recommendations />
-        </div>
-        <div>
-          <Comments />
-        </div>
+      </div>
+      <div className={style.cast}>
+        <Cast />
+      </div>
+      <div className={style.titleRecommendation}>
+        <Recommendations />
+      </div>
+      <div>
+        <Comments />
       </div>
     </div>
   )

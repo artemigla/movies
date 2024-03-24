@@ -33,7 +33,7 @@
 
     .wrapper {
       position: relative;
-      width: 90%;
+      width: 95%;
       margin-left: auto;
       margin-right: auto;
 
@@ -55,6 +55,7 @@
       }
 
       .slidermovies {
+        width: 100%;
         margin-top: 12px;
 
         .imgcontainer {
@@ -64,6 +65,7 @@
             display: flex;
             align-items: center;
             margin: auto;
+            object-fit: cover;
             width: 140px;
             height: 150px;
             border-radius: 10px;
@@ -88,7 +90,7 @@
   }
 
   .wrappercontainer {
-    width: 90%;
+    width: 95%;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -112,14 +114,12 @@
     }
 
     .slider {
-      width: 96%;
+      width: 98%;
       margin-left: auto;
       margin-right: auto;
 
       .wrapper {
         border-radius: 10px;
-        width: 96%;
-        align-items: center;
 
         .imgwrapper {
           display: flex;
@@ -137,6 +137,7 @@
           .img {
             width: 140px;
             height: 150px;
+            object-fit: cover;
             border-radius: 10px;
           }
 

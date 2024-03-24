@@ -13,7 +13,7 @@ export const Cast = () => {
   const { ids } = useParams();
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  
   const fetchInitialData = () => {
     setIsLoading(true);
     fetchDataFromApi(`/movie/${ids}/credits?api_key=${KEY}`)
@@ -34,7 +34,7 @@ export const Cast = () => {
     fetchInitialData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   return (
     <div className={style.container}>
       {data?.cast?.length ? <div className={style.actors}>
@@ -51,6 +51,7 @@ export const Cast = () => {
                 : <Skeleton duration={2} className={style.skeletonimg} />
               }
               {isLoading ? <p className={style.name}>{item.name}</p> : <Skeleton duration={2} className={style.name} />}
+              {isLoading ? <p className={style.character} >{item.character}</p> : ''}
             </SkeletonTheme>
           </Link>
         ))}

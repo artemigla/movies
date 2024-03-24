@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BASE_URL_IMAGES, KEY } from "../../constants/CONSTANTS";
 import { Rating } from "../rating/Rating";
@@ -6,8 +6,10 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import style from './style.module.scss';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchDataFromApi } from '../../utils/api';
+import { ThemeContext } from "../../context/theme-context";
 
 export const ShowMovies = () => {
+  const { theme } = useContext(ThemeContext);
   const [data, setData] = useState(null);
   const [pageNum, setPageNum] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +51,7 @@ export const ShowMovies = () => {
   }, []);
 
   return (
-    <div className={style.container}>
+    <div className={style.container} style={{ backgroundColor: theme?.background, color: theme?.color }}>
       <div className={style.movies}>
         <SkeletonTheme color="#505050" highlightColor="#333">
           {isLoading ? <h4>Movies</h4> : <Skeleton duration={2} className={style.moviesSceleton} />}

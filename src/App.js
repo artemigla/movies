@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Header } from "./components/header/Header";
 import { Movie } from "./components/content/Movie";
 import { Outlet, Route, Routes } from "react-router-dom";
@@ -12,10 +12,11 @@ import { useDispatch } from 'react-redux';
 import { fetchDataFromApi } from './utils/api';
 import { getApiConfiguration } from "./components/redux/slices/mainSlice";
 import { KEY } from "./constants/CONSTANTS";
+import { ThemeContext } from "./context/theme-context";
 import style from './style.module.scss';
 
 export const App = () => {
-
+  const {theme} = useContext(ThemeContext);
   const dispatch = useDispatch();
 
   const fetchApiConfig = () => {
@@ -37,7 +38,8 @@ export const App = () => {
   }, []);
 
   return (
-    <div className={style.container}>
+    
+      <div className={style.container} style={{backgroundColor: theme.background, color: theme.color}}>
       <Header />
       <Routes>
         <Route path="/" element={<Movie />} />
@@ -49,6 +51,8 @@ export const App = () => {
         <Route path="tvshowcontent/" element={<Tvshowcontent />} />
       </Routes>
       <Outlet />
+      
     </div>
+    
   );
 }

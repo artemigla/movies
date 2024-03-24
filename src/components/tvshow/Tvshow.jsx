@@ -11,7 +11,7 @@ export const Tvshow = () => {
     const { ids } = useParams();
     const { data } = useFetch(`/tv/${ids}?api_key=${KEY}`);
     const [isLoading, setIsLoading] = useState(false);
-
+    console.log(data);
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true)
@@ -23,7 +23,7 @@ export const Tvshow = () => {
             <SkeletonTheme color="#505050" highlightColor="#999">
                 <div className={style.wrapper}>
                     {isLoading ?
-                        <img className={style.img ? style.img : null} src={BASE_URL_IMAGES + data?.backdrop_path} alt={data?.backdrop_path} />
+                        <img className={style.img ? style.img : null} src={BASE_URL_IMAGES + data?.poster_path} alt={data?.backdrop_path} />
                         : <Skeleton duration={2} className={style.img} />
                     }
                     <span className={style.average}>

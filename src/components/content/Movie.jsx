@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
 import { BASE_URL_IMAGES, SETTINGS, KEY } from "../../constants/CONSTANTS.js";
 import { Rating } from "../rating/Rating.jsx";
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { ThemeContext } from "../../context/theme-context.js";
 import style from './style.module.scss';
 import { useFetch } from "../../hooks/useFetch.jsx";
 
@@ -21,9 +22,11 @@ const settings = {
 }
 
 export const Movie = () => {
+  const { theme } = useContext(ThemeContext);
   const [isLoading, setIsLoading] = useState(false);
   const { data } = useFetch(`/movie/popular?api_key=${KEY}`)
   const { data: results } = useFetch(`/discover/tv?api_key=${KEY}`);
+  
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(true);
@@ -31,7 +34,7 @@ export const Movie = () => {
   }, [])
 
   return (
-    <div className={style.container}>
+    <div className={style.container} style={{ backgroundColor: theme?.background, color: theme?.color }}>
       <div className={style.wrapperslider}>
         <Slider {...settings} className={style.slider}>
           {data?.results?.map((item) => (

@@ -1,23 +1,39 @@
 .container {
   width: 90%;
   height: 250vh;
-  background-color: #0e1b32;
   overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
 
   .wrapper {
     position: relative;
-    width: 98%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 
-    .overviewContent {
+    .backdrop {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: contain;
+      align-items: center;
+      justify-content: center;
       display: flex;
+      top: 0;
+      left: 0;
+      opacity: 0.3;
+      overflow: hidden;
+    }
+    .overviewContent {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      position: relative;
 
       .img {
         position: relative;
         top: 40px;
-        height: 300px;
-        width: 300px;
+        width: 350px;
         box-shadow: 0px 0px 17px 28px rgba(10, 42, 168, 0.57);
         border-radius: 12px;
       }
@@ -32,7 +48,7 @@
       .detail {
         position: relative;
         left: 60px;
-        color: white;
+        color: rgb(255, 255, 255);
         font-size: 21px;
 
         .title {
@@ -61,50 +77,94 @@
           align-items: center;
           font-size: 17px;
           margin: 15px 0 15px 15px;
-
+          border: 1px solid white;
           .skeletondata {
             font-size: 21px;
             margin-right: 35px;
             width: 120px;
           }
+        }
 
-          .genre {
+        .genre {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 5px 0 0 0;
+          position: relative;
+          p {
+            font-size: 21px;
+            margin-right: 20px;
+            justify-content: start;
+          }
+
+          .wrappergenres {
             display: flex;
-            grid-template-columns: auto;
-            width: 50%;
-            margin-left: 30px;
+            margin: 5px;
+            border-radius: 10px;
 
-            .wrappergenres {
-              margin: 5px;
+            background-color: rgb(252, 50, 83);
+
+            .skeletontitle {
+              width: 120px;
+              height: 21px;
               border-radius: 10px;
-              margin-left: 30px;
-              background-color: rgb(252, 50, 83);
+            }
 
-              .skeletontitle {
-                width: 120px;
-                height: 21px;
-                border-radius: 10px;
+            .genretitle {
+              margin: 5px;
+              font-size: 17px;
+              color: white;
+              font-weight: lighter;
+              white-space: nowrap;
+            }
+          }
+        }
+        .info {
+          display: flex;
+          padding: 15px 0 0 0;
+          b {
+            font-weight: lighter;
+          }
+
+          p {
+            color: gray;
+            flex-direction: row;
+            margin-left: 15px;
+          }
+
+          .datan {
+            margin-left: 50px;
+            display: flex;
+
+            .infoitem{
+              display: flex;
+              flex-direction: row;
+              margin-left: 25px;
+
+              .runtime{
+                font-size: 21px;
               }
 
-              .genretitle {
-                font-size: 17px;
-                color: white;
-                padding: 1px 5px 1px 5px;
-                font-weight: lighter;
-                white-space: nowrap;
+              .textruntime{
+                margin-left: 15px;
+                color: gray;
               }
             }
           }
         }
-
         .videoWrapper {
+          padding: 15px 0 0 0;
           width: 50%;
         }
       }
     }
 
+    .cast {
+      width: 100%;
+    }
+
     .titleRecommendation {
-      width: 90%;
+      width: 100%;
     }
   }
 

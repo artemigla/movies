@@ -10,7 +10,7 @@ export const Person = () => {
     const { ids } = useParams();
     const { data } = useFetch(`/person/${ids}?api_key=${KEY}`);
     const [isLoading, setIsLoading] = useState(false);
-
+    
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true);
