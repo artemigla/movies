@@ -13,15 +13,16 @@ import { Comments } from './Comments';
 import NoPoster from '../../assets/noposter.jpg';
 import { useSelector } from 'react-redux';
 import style from './style.module.scss';
-import { ThemeContext } from '../../context/theme-context.js';
+import { ThemeContext } from '../../context/ThemeContext.js';
 
 
 export const Details = () => {
   const { ids } = useParams();
+  const { theme, darkMode } = useContext(ThemeContext);
   const { data } = useFetch(`/movie/${ids}?api_key=${KEY}`);
   const [isLoading, setIsLoading] = useState(false);
   const { url } = useSelector(state => state?.main);
-  const { theme } = useContext(ThemeContext);
+
   const posterUrl = data?.poster_path
     ? url?.poster + data?.poster_path
     : NoPoster;
@@ -39,12 +40,14 @@ export const Details = () => {
   }, [isLoading]);
 
   return (
-    <div className={style.container} style={{ backgroundColor: theme.background, color: theme.color }}>
+    <div className={style.container} style={{
+      background: darkMode ? theme?.dark?.background : theme?.light?.background,
+      color: darkMode ? theme?.dark?.color : theme?.light?.color
+    }}>
       <div className={style.wrapper}>
         <div className={style.backdrop}>
           <img src={url?.backdrop + data?.backdrop_path} alt='' />
         </div>
-
         <div className={style.overviewContent}>
           {(
             <div className={style.blockimg}>
@@ -62,7 +65,7 @@ export const Details = () => {
               </SkeletonTheme>
             </div>
           )}
-          <div className={style.detail}>
+          <div className={style.detail} style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>
             <div className={style.title}>
               <SkeletonTheme color="#505050" highlightColor="#999">
                 {isLoading ?

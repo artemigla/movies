@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { BASE_URL_IMAGES, KEY } from '../../../constants/CONSTANTS';
 import { Link } from 'react-router-dom';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import InfiniteScroll from 'react-infinite-scroll-component';
-import style from './style.module.scss';
 import { fetchDataFromApi } from '../../../utils/api';
+import { ThemeContext } from '../../../context/ThemeContext';
+import style from './style.module.scss';
 
 export const Tvshowcontent = () => {
     const [data, setData] = useState(null);
     const [pageNum, setPageNum] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
+    const { theme, darkMode } = useContext(ThemeContext);
 
     const fetchInitialData = () => {
         setIsLoading(true);
@@ -67,13 +69,14 @@ export const Tvshowcontent = () => {
                                             }
                                         </SkeletonTheme>
                                         <SkeletonTheme color="#505050" highlightColor="#999">
-                                            {isLoading ? <h4 className={style.title}>{item?.name.slice(0, 15)}</h4>
+                                            {isLoading ? <h4 className={style.title}
+                                                style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>
+                                                {item?.name.slice(0, 15)}</h4>
                                                 : <Skeleton duration={2} className={style.titleSceleton} />
                                             }
                                         </SkeletonTheme>
                                     </div>
                                 </Link>
-
                             ))}
                         </InfiniteScroll>) : (
                         <h3>No results</h3>

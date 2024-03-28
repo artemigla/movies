@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { KEY } from "../../constants/CONSTANTS";
 import { useFetch } from '../../hooks/useFetch';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { ThemeContext } from "../../context/ThemeContext";
 import style from './style.module.scss';
 
 export const Comments = () => {
   const { ids } = useParams();
   const { data } = useFetch(`/movie/${ids}/reviews?api_key=${KEY}`);
   const [isLoading, setIsLoading] = useState(false);
+  const { theme, darkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,11 +27,11 @@ export const Comments = () => {
         <div key={item.id}>
           <details className={style.detailsReviews}>
             <SkeletonTheme color="#505050" highlightColor="#999">
-              <summary>
+              <summary style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>
                 {isLoading ? <b className={style.author}>{item.author}</b> : <Skeleton duration={2} className={style.author} />}
               </summary>
             </SkeletonTheme>
-            <i className={style.content}>{item.content}</i>
+            <i className={style.content} style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>{item.content}</i>
           </details>
         </div>
       )) : <SkeletonTheme color="#505050" highlightColor="#999">

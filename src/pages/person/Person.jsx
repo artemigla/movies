@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { BASE_URL_IMAGES, KEY } from '../../constants/CONSTANTS';
 import { useFetch } from '../../hooks/useFetch';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { ThemeContext } from '../../context/ThemeContext';
 import style from './style.module.scss';
 
 export const Person = () => {
@@ -10,6 +11,7 @@ export const Person = () => {
     const { ids } = useParams();
     const { data } = useFetch(`/person/${ids}?api_key=${KEY}`);
     const [isLoading, setIsLoading] = useState(false);
+    const { theme, darkMode } = useContext(ThemeContext);
     
     useEffect(() => {
         setTimeout(() => {
@@ -25,7 +27,10 @@ export const Person = () => {
                         {isLoading ? <img className={style.img} src={`${BASE_URL_IMAGES}` + data?.profile_path} alt={data?.name} /> :
                             <Skeleton duration={2} className={style.img} />}
                     </SkeletonTheme>
-                    <div className={style.biography}>
+                    <div className={style.biography} style={{
+                        background: darkMode ? theme?.dark?.background : theme?.light?.background,
+                        color: darkMode ? theme?.dark?.color : theme?.light?.color
+                    }}>
                         <SkeletonTheme color="#505050" highlightColor="#999">
                             {isLoading ? <span className={style.title}>{data?.name}</span> : <Skeleton duration={2} className={style.title} />}
                             {isLoading ? <div className={style.titlebiography}>

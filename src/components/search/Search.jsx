@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchDataFromApi } from '../../utils/api';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { ShowCarts } from '../showcarts/ShowCarts';
 import { KEY } from '../../constants/CONSTANTS';
+import { ThemeContext } from '../../context/ThemeContext';
 import style from './style.module.scss';
 
 export const Search = () => {
@@ -13,7 +14,7 @@ export const Search = () => {
     const [pageNum, setPageNum] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
     const { query } = useParams();
-
+    const { theme, darkMode } = useContext(ThemeContext);
     const fetchNextPageData = () => {
         setIsLoading(true)
         fetchDataFromApi(`/search/multi?query=${query}&api_key=${KEY}&page=${pageNum}`)
@@ -53,7 +54,7 @@ export const Search = () => {
 
     return (
         <div className={style.container}>
-            <div className={style.titlequery}>
+            <div className={style.titlequery} style={{color: darkMode ? theme?.dark?.color : theme?.light?.color}}>
                 {`Search ${data?.total_results > 1
                     ? "results"
                     : "result"
@@ -72,7 +73,7 @@ export const Search = () => {
                             return <ShowCarts key={index} data={item} />
                         })}
                     </>
-                ) : (<div>No Results</div>)}
+                ) : (<div style={{color: darkMode ? theme?.dark?.color : theme?.light?.color}}>No Results</div>)}
             </InfiniteScroll>
         </div>
     )
