@@ -12,9 +12,8 @@ import { Recommendations } from '../recommendations/Recommendations';
 import { Comments } from './Comments';
 import NoPoster from '../../assets/noposter.jpg';
 import { useSelector } from 'react-redux';
-import style from './style.module.scss';
 import { ThemeContext } from '../../context/ThemeContext.js';
-
+import style from './style.module.scss';
 
 export const Details = () => {
   const { ids } = useParams();
@@ -82,7 +81,8 @@ export const Details = () => {
                 : <Skeleton duration={2} className={style.skeletonoverview} />
               }
             </SkeletonTheme>
-            <div className={style.genre}><p>Genres:</p>
+            <p>Genres:</p>
+            <div className={style.genre}>
               {data?.genres?.map(({ id, name }) => (
                 <SkeletonTheme key={id} color="#505050" highlightColor="#999">
                   <div className={style.wrappergenres}>
@@ -92,21 +92,27 @@ export const Details = () => {
               ))}
             </div>
             <hr />
-            <div className={style.info}><b>Status: </b><p>{data?.status}</p>
-              <span className={style.datan}><b>Release data: </b> <p>{dayjs(data?.release_date).format("MMMM D, YYYY")}</p>
-                {data?.runtime && (
-                  <div className={style.infoitem}>
-                    <span className={style.runtime}>
-                      Runtime:{" "}
-                    </span>
-                    <span className={style.textruntime}>
-                      {toHoursAndMinutes(
-                        data?.runtime
-                      )}
-                    </span>
-                  </div>
-                )}
-              </span>
+            <div className={style.info}>
+              <div className={style.status}>
+                <b>Status: </b>
+                <span>{data?.status}</span>
+              </div>
+              <div className={style.release}>
+                <b>Release data: </b>
+                <span>{dayjs(data?.release_date).format("MMMM D, YYYY")}</span>
+              </div>
+              {data?.runtime && (
+                <div className={style.infoitem}>
+                  <span className={style.runtime}>
+                    Runtime:{" "}
+                  </span>
+                  <span className={style.textruntime}>
+                    {toHoursAndMinutes(
+                      data?.runtime
+                    )}
+                  </span>
+                </div>
+              )}
             </div>
             <hr />
             <div className={style.videoWrapper}>

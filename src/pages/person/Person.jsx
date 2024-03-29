@@ -12,7 +12,7 @@ export const Person = () => {
     const { data } = useFetch(`/person/${ids}?api_key=${KEY}`);
     const [isLoading, setIsLoading] = useState(false);
     const { theme, darkMode } = useContext(ThemeContext);
-    
+
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true);
@@ -51,7 +51,6 @@ export const Person = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }

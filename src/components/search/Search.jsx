@@ -15,6 +15,7 @@ export const Search = () => {
     const [isLoading, setIsLoading] = useState(false);
     const { query } = useParams();
     const { theme, darkMode } = useContext(ThemeContext);
+
     const fetchNextPageData = () => {
         setIsLoading(true)
         fetchDataFromApi(`/search/multi?query=${query}&api_key=${KEY}&page=${pageNum}`)
@@ -37,12 +38,11 @@ export const Search = () => {
     const fetchInitialData = () => {
         setIsLoading(true);
         fetchDataFromApi(`/search/multi?query=${query}&api_key=${KEY}&page=${pageNum}`)
-            .then(
-                (res) => {
-                    setData(res);
-                    setPageNum((prev) => prev + 1);
-                    setIsLoading(false);
-                }
+            .then((res) => {
+                setData(res);
+                setPageNum((prev) => prev + 1);
+                setIsLoading(false);
+            }
             );
     }
 
@@ -54,7 +54,7 @@ export const Search = () => {
 
     return (
         <div className={style.container}>
-            <div className={style.titlequery} style={{color: darkMode ? theme?.dark?.color : theme?.light?.color}}>
+            <div className={style.titlequery} style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>
                 {`Search ${data?.total_results > 1
                     ? "results"
                     : "result"
@@ -73,7 +73,7 @@ export const Search = () => {
                             return <ShowCarts key={index} data={item} />
                         })}
                     </>
-                ) : (<div style={{color: darkMode ? theme?.dark?.color : theme?.light?.color}}>No Results</div>)}
+                ) : (<div style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>No Results</div>)}
             </InfiniteScroll>
         </div>
     )

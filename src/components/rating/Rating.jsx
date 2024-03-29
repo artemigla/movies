@@ -13,7 +13,6 @@ export const Rating = ({ rating }) => {
         text={rating}
         styles={buildStyles({
           pathColor: rating < 5 ? "red" : rating < 7 ? "orange" : "green", textSize: "25px"
-
         })}
       />
     </div>

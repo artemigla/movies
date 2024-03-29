@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { BASE_URL_IMAGES, KEY } from "../../constants/CONSTANTS";
 import { Rating } from "../rating/Rating";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import style from './style.module.scss';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchDataFromApi } from '../../utils/api';
 import { ThemeContext } from "../../context/ThemeContext";
+import style from './style.module.scss';
 
 export const ShowMovies = () => {
   const { theme, darkMode } = useContext(ThemeContext);

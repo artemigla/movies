@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
-import style from './styles.module.scss';
-import { RxAvatar } from 'react-icons/rx';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
 import { ThemeContext } from "../../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
 import ReactSwitch from 'react-switch';
+import style from './styles.module.scss';
 
 export const Header = () => {
   const { theme, darkMode, setDarkMode } = useContext(ThemeContext);
@@ -48,22 +47,27 @@ export const Header = () => {
             <h3 style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>{title || <Skeleton duration={2} />}</h3>
           </SkeletonTheme>
         </div>
-        <div className={style.search}>
+        <div className={style.flexbox}>
           <SkeletonTheme color="#202020" highlightColor="#444">
             {!isLoading ?
-              <>
-                <input type="search"
-                  style={{
-                    background: !darkMode ? theme?.dark?.background : theme?.light?.background,
-                    color: !darkMode ? theme?.dark?.color : theme?.light?.color
-                  }}
-                  value={search}
-                  onInput={handlerInput}
-                  onKeyUp={searchQueryHandler}
-                  placeholder="Search..." />
-              </>
+              <div className={style.searchcontainer}>
+                {(
+                  <div>
+                    <input type="text"
+                      style={{
+                        background: !darkMode ? theme?.dark?.background : theme?.light?.background,
+                        color: !darkMode ? theme?.dark?.color : theme?.light?.color
+                      }}
+                      value={search}
+                      onInput={handlerInput}
+                      onKeyUp={searchQueryHandler}
+                      placeholder="Search..." />
+                  </div>
+                )}
+              </div>
               : <Skeleton duration={2} className={style.skeleton} />}
           </SkeletonTheme>
+
         </div>
         <SkeletonTheme color="#202020" highlightColor="#444">
           <div className={style.rigthcontent}>
@@ -73,14 +77,13 @@ export const Header = () => {
                 checked={darkMode}
                 onColor="#86d3ff"
                 onHandleColor="#2693e6"
-                handleDiameter={25}
+                handleDiameter={17}
                 uncheckedIcon={false}
                 checkedIcon={false}
-                height={20}
-                width={45}
+                height={15}
+                width={35}
               />
             </div>
-            {!isLoading ? <RxAvatar className={style.avatar} style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }} /> : <Skeleton className={style.avatar} duration={2} />}
           </div>
         </SkeletonTheme>
       </div>

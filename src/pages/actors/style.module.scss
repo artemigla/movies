@@ -2,6 +2,7 @@
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+
   .actors {
     color: white;
 
@@ -46,7 +47,7 @@
         text-align: center;
       }
 
-      .character{
+      .character {
         font-size: 15px;
         text-align: center;
         color: gray;
@@ -144,11 +145,13 @@
 @media screen and (max-width: 420px) {
   .container {
     width: 100%;
+
     .actors {
       .titleskeleton {
         font-size: 17px;
       }
     }
+
     .slider {
       padding: 0;
       margin: 0;
@@ -198,6 +201,7 @@
           width: 120px;
           object-fit: cover;
         }
+
         .name {
           font-size: 17px;
         }

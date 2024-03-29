@@ -9,13 +9,12 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        
+
         .img {
             width: 350px;
             height: 450px;
             border-radius: 12px;
             object-fit: cover;
-            
         }
 
         .average {
