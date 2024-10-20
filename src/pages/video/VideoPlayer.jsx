@@ -6,8 +6,8 @@ import { KEY } from '../../constants/CONSTANTS';
 import style from './style.module.scss';
 
 const opts = {
-  // height: '100%',
-  // width: '100%',
+  // height: '390',
+  // width: '390',
   playerVars: {
     autoplay: 0,
   },

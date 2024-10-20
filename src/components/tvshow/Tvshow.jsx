@@ -13,7 +13,7 @@ export const Tvshow = () => {
     const { data } = useFetch(`/tv/${ids}?api_key=${KEY}`);
     const [isLoading, setIsLoading] = useState(false);
     const { theme, darkMode } = useContext(ThemeContext);
-
+    console.log('show');
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(true)

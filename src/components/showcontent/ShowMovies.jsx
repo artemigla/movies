@@ -17,6 +17,8 @@ export const ShowMovies = () => {
   const fetchInitialData = () => {
     setIsLoading(true);
     fetchDataFromApi(`/movie/popular?api_key=${KEY}`).then((res) => {
+      console.log(res?.response?.data);
+      
       setData(res);
       setPageNum((prev) => prev + 1);
       setIsLoading(false);
