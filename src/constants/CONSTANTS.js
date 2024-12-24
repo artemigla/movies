@@ -47,6 +47,13 @@ export const SETTINGS = {
         slidesToShow: 2,
         sinitialSlide: 2,
       }
+    },
+    {
+      breakpoint: 300,
+      settings: {
+        slidesToShow: 2,
+        sinitialSlide: 2,
+      }
     }
   ]
 };

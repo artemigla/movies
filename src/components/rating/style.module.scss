@@ -1,37 +1,9 @@
 .container {
-  width: 35px;
-  height: 35px;
+  width: clamp(1.75rem, calc(1.313rem + 1.4vi), 2.188rem);
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   font-weight: bolder;
-}
-
-@media screen and (max-width: 720px) {
-  .container {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .container {
-    margin-left: 1px;
-  }
-}
-@media screen and (max-width: 420px) {
-  .container {
-    margin-left: 1px;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .container {
-    margin-left: 1px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .container {
-    margin-left: 1px;
-  }
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
