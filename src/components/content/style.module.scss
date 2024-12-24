@@ -16,7 +16,6 @@
         .img {
           display: flex;
           border-radius: 10px;
-          height: 35rem;
           width: 100%;
         }
       }
@@ -97,6 +96,7 @@
     margin-bottom: 100px;
 
     .title {
+      display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
@@ -112,8 +112,10 @@
 
       .titlesceleton {
         display: flex;
+        justify-content: center;
+        align-items: center;
         left: 0px;
-        top: 0px;
+        top: 17px;
         height: 30px;
         width: clamp(5.625rem, calc(3.75rem + 6vi), 7.5rem);
       }

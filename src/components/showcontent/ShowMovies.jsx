@@ -16,9 +16,7 @@ export const ShowMovies = () => {
 
   const fetchInitialData = () => {
     setIsLoading(true);
-    fetchDataFromApi(`/movie/popular?api_key=${KEY}`).then((res) => {
-      console.log(res?.response?.data);
-      
+    fetchDataFromApi(`/movie/popular?api_key=${KEY}`).then((res) => {      
       setData(res);
       setPageNum((prev) => prev + 1);
       setIsLoading(false);
@@ -63,8 +61,7 @@ export const ShowMovies = () => {
         </SkeletonTheme>
       </div>
       <div className={style.wrapper}>
-        {<>
-          {data?.results.length > 0 ? (
+        {data?.results?.length > 0 ? (
             <InfiniteScroll
               className={style.wrapperdata}
               dataLength={data?.results?.length || []}
@@ -80,7 +77,7 @@ export const ShowMovies = () => {
                           : <Skeleton duration={2} className={style.imgsceleton} />
                         }
                       </SkeletonTheme>
-                      <div className={style.rating} >
+                      <div>
                         <SkeletonTheme color="#505050" highlightColor="#999">
                           {isLoading ?
                             <Rating rating={Number(vote_average).toFixed(1)} /> :
@@ -89,7 +86,9 @@ export const ShowMovies = () => {
                       </div>
                       <SkeletonTheme color="#505050" highlightColor="#999">
                         {isLoading ?
-                          <span className={style.title} style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>{title}</span> :
+                          <div className={style.title}>
+                            <span style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>{title?.slice(0, 16)}</span>
+                          </div> :
                           <Skeleton duration={2} className={style.titleSceleton} />}
                       </SkeletonTheme>
                     </div>
@@ -99,9 +98,7 @@ export const ShowMovies = () => {
             </InfiniteScroll>
           ) : (
             <h3 style={{ color: darkMode ? theme?.dark?.color : theme?.light?.color }}>No results</h3>
-          )
-          }
-        </>}
+          )} 
       </div>
     </div>
   )
