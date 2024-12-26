@@ -115,8 +115,8 @@
         justify-content: center;
         align-items: center;
         left: 0px;
-        top: 17px;
-        height: 30px;
+        top: clamp(0.75rem, calc(0.438rem + 1vi), 1.063rem);
+        height: 32px;
         width: clamp(5.625rem, calc(3.75rem + 6vi), 7.5rem);
       }
     }
